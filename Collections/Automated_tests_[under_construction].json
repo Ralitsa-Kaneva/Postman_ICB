@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "9b2d225d-0d57-4c66-900f-ec600db43523",
+		"name": "Automated tests [under construction]",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Events Controller",
+			"item": [],
+			"id": "0915c201-29cf-4b45-87a3-09119ece0aff"
+		},
+		{
+			"name": "Vessel Controller",
+			"item": [
+				{
+					"name": "456478. Run /api/v1/Vessels('{{vessel}}')/Tags('{{goodDataAttribute}}')/values?sampling-mode=raw GET request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f2597ffb-c9f9-4ee1-9f94-ffd1baf74641",
+								"exec": [
+									"let piDataSrting = pm.environment.get(\"attribute-data-values\");\r",
+									"// Parse the JSON string into a JavaScript object\r",
+									"var piDataObject = JSON.parse(piDataSrting);\r",
+									"// Access the \"data\" array within the JSON object\r",
+									"var piData = piDataObject.value;\r",
+									"\r",
+									"piDataLength = piData.length;\r",
+									"\r",
+									"let response = pm.response.json().value;\r",
+									"responseLength = response.length;\r",
+									"\r",
+									"//Tests\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () \r",
+									"{\r",
+									"    pm.response.to.have.status(200);\r",
+									"}\r",
+									");\r",
+									"\r",
+									" pm.test(\"Body returns correct values\", function () \r",
+									" {\r",
+									"    isCorrectResponse = true;\r",
+									"\r",
+									"    if(responseLength<=10)\r",
+									"    {\r",
+									"        if(piDataLength > 10)\r",
+									"        {\r",
+									"            piData = piData.slice(0, 10);\r",
+									"            items = 10;\r",
+									"        }\r",
+									"        else if(responseLength == piDataLength)\r",
+									"        {\r",
+									"            items = piDataLength;\r",
+									"        }\r",
+									"        else\r",
+									"        {\r",
+									"            isCorrectResponse = false;\r",
+									"            console.log(\"The response length is different than the data length\");\r",
+									"        }\r",
+									"    }\r",
+									"    else\r",
+									"    {\r",
+									"        isCorrectResponse = false;\r",
+									"        console.log(\"The response length is bigger than 10 records\");\r",
+									"    }\r",
+									"\r",
+									"    if(isCorrectResponse)\r",
+									"    {\r",
+									"        for(i=0; i<items; i++)\r",
+									"        {\r",
+									"            if(Date.parse(piData[i][\"Event Time\"]) != Date.parse(response[i].Timestamp.replace(/\\.\\d+/, \"\"))){\r",
+									"                isCorrectResponse = false;\r",
+									"                console.log(\"The Timestamp of the records is not correct\");\r",
+									"                break;\r",
+									"            }\r",
+									"\r",
+									"            if(piData[i].Value!=response[i].Value )\r",
+									"            {\r",
+									"                if(response[i].Value==null)\r",
+									"                {\r",
+									"                    if(!(piData[i].Substituted == true) && !(response[i].Quality == \"Bad\"))\r",
+									"                    {\r",
+									"                        console.log(\"The response value is null\");\r",
+									"                        isCorrectResponse = false;\r",
+									"                        break;\r",
+									"                    }\r",
+									"                    if((response[i].Quality == \"Bad\") && !(piData[i].Value == response[i].QualityInfo))\r",
+									"                    {\r",
+									"                        console.log(\"The response value is null but the data is good and not substituted\");\r",
+									"                        isCorrectResponse = false;\r",
+									"                        break;\r",
+									"                    }\r",
+									"                }           \r",
+									"            }\r",
+									"        }\r",
+									"    }\r",
+									"\r",
+									"     pm.expect(isCorrectResponse, 'The returned values are not correct').to.be.true;\r",
+									"\r",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9daf390f-127d-4566-98e5-d2bcaf078973",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "0655e402-5877-4a33-87bc-aaf1110cd62a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{port}}/api/v1/Vessels('{{vessel-IMO}}')/Tags('{{attribute}}')/values?sampling-mode=raw",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"Vessels('{{vessel-IMO}}')",
+								"Tags('{{attribute}}')",
+								"values"
+							],
+							"query": [
+								{
+									"key": "sampling-mode",
+									"value": "raw"
+								}
+							]
+						},
+						"description": "Must return the last 10 recorded values no matter of time"
+					},
+					"response": []
+				},
+				{
+					"name": "456493. Run /api/v1/Vessels('{{vessel}}')/Tags('{{goodDataAttributeNum}}')/values?sampling-mode=raw&recordedValueCount=2 GET request Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1b8cf3cb-5df1-4997-bd9a-08e484c2c376",
+								"exec": [
+									"let piDataSrting = pm.environment.get(\"attribute-data-values\");\r",
+									"// Parse the JSON string into a JavaScript object\r",
+									"var piDataObject = JSON.parse(piDataSrting);\r",
+									"// Access the \"data\" array within the JSON object\r",
+									"var piData = piDataObject.value;\r",
+									"\r",
+									"var recordedValuesCount = pm.request.url.query.get(\"recordedValuesCount\")\r",
+									"\r",
+									"piDataLength = piData.length;\r",
+									"\r",
+									"let response = pm.response.json().value;\r",
+									"responseLength = response.length;\r",
+									"\r",
+									"\r",
+									"//Tests\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () \r",
+									"{\r",
+									"    pm.response.to.have.status(200);\r",
+									"}\r",
+									");\r",
+									"\r",
+									" pm.test(\"Body returns correct values\", function () \r",
+									"  {\r",
+									"    isCorrectResponse = true;\r",
+									"\r",
+									"    if(responseLength<=recordedValuesCount)\r",
+									"    {\r",
+									"        if(piDataLength > recordedValuesCount)\r",
+									"        {\r",
+									"            piData = piData.slice(0, recordedValuesCount);\r",
+									"            items = recordedValuesCount;\r",
+									"        }\r",
+									"        else if(responseLength == piDataLength)\r",
+									"        {\r",
+									"            items = piDataLength;\r",
+									"        }\r",
+									"        else\r",
+									"        {\r",
+									"            isCorrectResponse = false;\r",
+									"            console.log(\"The response length is different than the data length\");\r",
+									"        }\r",
+									"    }\r",
+									"    else\r",
+									"    {\r",
+									"        isCorrectResponse = false;\r",
+									"        console.log(\"The response length is bigger than 10 records\");\r",
+									"    }\r",
+									"\r",
+									"    if(isCorrectResponse)\r",
+									"    {\r",
+									"        for(i=0; i<items; i++)\r",
+									"        {\r",
+									"            if(Date.parse(piData[i][\"Event Time\"]) != Date.parse(response[i].Timestamp.replace(/\\.\\d+/, \"\"))){\r",
+									"                isCorrectResponse = false;\r",
+									"                console.log(\"The Timestamp of the records is not correct\");\r",
+									"                break;\r",
+									"            }\r",
+									"\r",
+									"            if(piData[i].Value!=response[i].Value )\r",
+									"            {\r",
+									"                if(response[i].Value==null)\r",
+									"                {\r",
+									"                    if(!(piData[i].Substituted == true) && !(response[i].Quality == \"Bad\"))\r",
+									"                    {\r",
+									"                        console.log(\"The response value is null\");\r",
+									"                        isCorrectResponse = false;\r",
+									"                        break;\r",
+									"                    }\r",
+									"                    if((response[i].Quality == \"Bad\") && !(piData[i].Value == response[i].QualityInfo))\r",
+									"                    {\r",
+									"                        console.log(\"The response value is null but the data is good and not substituted\");\r",
+									"                        isCorrectResponse = false;\r",
+									"                        break;\r",
+									"                    }\r",
+									"                }           \r",
+									"            }\r",
+									"        }\r",
+									"    }\r",
+									"\r",
+									"     pm.expect(isCorrectResponse, 'The returned values are not correct').to.be.true;\r",
+									"\r",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b5f38ac1-3ef6-4e2c-8b0a-1efbf603847b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{port}}/api/v1/Vessels('{{vessel-IMO}}')/Tags('{{attribute}}')/values?sampling-mode=raw&recordedValuesCount={{recordedValueCount}}",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"Vessels('{{vessel-IMO}}')",
+								"Tags('{{attribute}}')",
+								"values"
+							],
+							"query": [
+								{
+									"key": "sampling-mode",
+									"value": "raw"
+								},
+								{
+									"key": "recordedValuesCount",
+									"value": "{{recordedValueCount}}"
+								}
+							]
+						},
+						"description": "The result must contain the recordedValuesCount number of recorded values"
+					},
+					"response": []
+				}
+			],
+			"id": "ad8c4a0a-8b08-44f5-ae48-b6b7911db587"
+		},
+		{
+			"name": "Tag Controller",
+			"item": [],
+			"id": "88e3abd7-0855-4319-bfa9-8612262f2f7a"
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{password}}",
+			"username": "{{user}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9d564c16-1c5b-4dbc-a5d9-dc9f151e444d",
+				"type": "text/javascript",
+				"exec": [
+					"",
+					"// pm.environment.set(\"url\", data.url);",
+					"// pm.environment.set(\"port\", data.port);",
+					"// pm.environment.set(\"user\", data.user);",
+					"// pm.environment.set(\"password\", data.password);",
+					"// pm.environment.set(\"vesselsWithApiNode\", data.vesselsWithApiNode);",
+					"// pm.environment.set(\"vesselsWithoutApiNode\", data.vesselsWithoutApiNode);",
+					"// pm.environment.set(\"vessel-IMO\", data[\"vessel-IMO\"]);",
+					"// pm.environment.set(\"node\", data.node);",
+					"// pm.environment.set(\"attribute\", data.attribute);",
+					"// pm.environment.set(\"insert-attribute\", data[\"insert-attribute\"]);",
+					"// pm.environment.set(\"no-insert-access-attribute\", data[\"no-insert-access-attribute\"]);",
+					"// pm.environment.set(\"attribute-data-values\", JSON.stringify(data[\"attribute-data-values\"]));",
+					"// pm.environment.set(\"insert-attribute-data-values\", data[\"insert-attribute-data-values\"]);",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "03e5224a-7aec-49dc-ace6-940c797203f2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
