@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "de636498-44ed-4713-b4c3-cbd180630316",
+		"name": "Automation: Vessel Controller: Status codes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "195116: K-IMS API: Run illegal requests and check if the result Status is 405 Method Not Allowed",
+			"id": "e271213f-9869-4a56-943b-0deca600ed74",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{Password}}",
+			"username": "{{User}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3c32bcb9-64d6-4462-bddc-74609f601d40",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4a1e9b91-caf2-4c73-b71a-5035db1d72b9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
