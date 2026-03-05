@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "16ea0ea5-73b9-43cc-94d4-93101c750df7",
+		"name": "Automation: Vessel Controller: Headers check",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[AM]194664 Send valid GET request and check for X-Powered-By and Server fingerprint headers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2b76fd1b-1c6e-4c4e-b5f9-6737c10f893d",
+						"exec": [
+							"pm.test(\"X-Powered-By header is present\", function () {\r",
+							"    pm.response.to.have.header(\"X-Powered-By\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"X-Powered-By header value is Unknown\", function () {\r",
+							"   pm.response.to.be.header(\"X-Powered-By\", \"Unknown\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Server header is present\", function () {\r",
+							"    pm.response.to.have.header(\"Server\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Server header value is Unknown\", function () {\r",
+							"   pm.response.to.be.header(\"Server\", \"Unknown\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "546ab81f-95da-4569-8bf9-521cf442fdb5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}:{{port}}/api/v1/Vessels?$expand=Tags",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Vessels"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "Tags"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{Password}}",
+			"username": "{{User}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3c32bcb9-64d6-4462-bddc-74609f601d40",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4a1e9b91-caf2-4c73-b71a-5035db1d72b9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
