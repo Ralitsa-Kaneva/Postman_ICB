@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "a594584f-2cb6-4dff-8651-4e3408baab62",
+		"name": "Automation: Vessel Controller: Interpolated values for specific period (with 1 minute resolution)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[AM]195349. Run GET TagsValues endpoint for AF element with attribute with bad values with selected From and To parameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8aa36fbf-c1e6-4c87-9a0c-0c1b74e0ae0e",
+						"exec": [
+							"//Common tests\r",
+							"    pm.test(\"X-Powered-By header is present\", function () {\r",
+							"        pm.response.to.have.header(\"X-Powered-By\");\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"X-Powered-By header value is Unknown\", function () {\r",
+							"    pm.response.to.be.header(\"X-Powered-By\", \"Unknown\");\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"Server header is present\", function () {\r",
+							"        pm.response.to.have.header(\"Server\");\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"Server header value is Unknown\", function () {\r",
+							"    pm.response.to.be.header(\"Server\", \"Unknown\");\r",
+							"    });\r",
+							"\r",
+							"//Tests\r",
+							"    let jsonData = pm.response.json();\r",
+							"\r",
+							"    pm.test('Tags with bad values return Quality Bad', () => { _.each(jsonData.value, (item) => \r",
+							"    { pm.expect(item.Quality).to.be.equal('Bad') }) \r",
+							"    });\r",
+							"\r",
+							"    pm.test('Tags with bad values return Value null', () => { _.each(jsonData.value, (item) => \r",
+							"    { pm.expect(item.Value).to.be.equal(null) }) \r",
+							"    });\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Verify that the found posts are 4\", function () { \r",
+							"    var posts = pm.response.json();  \r",
+							"    console.log(posts.length)\r",
+							"       let counter = 0;   \r",
+							"       for (i=0; i<posts.length;i++){  \r",
+							"                if (posts[i].id) {\r",
+							"                          counter++;       \r",
+							"                }  \r",
+							"        };  \r",
+							"        pm.expect(counter).to.eql(4);\r",
+							"        });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e02867d6-effd-49ab-a0dc-142479c5a3aa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Vessels('{{vessel}}')/Tags('{{badDataAtt}}')/values?From=2023-01-17T12:54:00Z&To=2023-01-18T14:36:03Z",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Vessels('{{vessel}}')",
+						"Tags('{{badDataAtt}}')",
+						"values"
+					],
+					"query": [
+						{
+							"key": "sampling-mode",
+							"value": "raw",
+							"description": "Returns recorded values",
+							"disabled": true
+						},
+						{
+							"key": "From",
+							"value": "2023-01-17T12:54:00Z",
+							"description": "Start time in UTC"
+						},
+						{
+							"key": "To",
+							"value": "2023-01-18T14:36:03Z",
+							"description": "End time  in UTC"
+						},
+						{
+							"key": "interval",
+							"value": "1h",
+							"description": "Returns values with the selected interval",
+							"disabled": true
+						},
+						{
+							"key": "repeat",
+							"value": "latest",
+							"description": "Repeats the latest recorded value",
+							"disabled": true
+						},
+						{
+							"key": "repeat",
+							"value": "renew-timestamps",
+							"disabled": true
+						}
+					]
+				},
+				"description": "This endpoint will display interpolated values for the specified From-To period with 1 minute interval. The \"To\" time is not included in the result. The result is sorted ascending\n\nThe displayed properties are:\n\n\"Value\": -> Contains \"null\", if the value is bad  \n\"Timestamp\": -> Contains timestamp in local time sorted ascending  \n\"Quality\": -> Contains \"Bad\"  \n\"QualityInfo\": -> Contains the bad data state, e.g. \"Error\""
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{Password}}",
+			"username": "{{User}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3c32bcb9-64d6-4462-bddc-74609f601d40",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4a1e9b91-caf2-4c73-b71a-5035db1d72b9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
