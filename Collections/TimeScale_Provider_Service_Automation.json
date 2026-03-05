@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "5788bf0c-aeed-421d-93bc-f53e951e185b",
+		"name": "TimeScale Provider Service Automation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Automated Test Cases",
+			"item": [
+				{
+					"name": "625820. GET /api/metadata/schemas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a84f780d-7f5e-4923-b31e-daa47c63291d",
+								"exec": [
+									" // Get the response\r",
+									"    let responseData = pm.response.json();\r",
+									"\r",
+									"//Assertions\r",
+									"pm.test(\"Default schema is Kims\", function () {\r",
+									"    pm.expect(responseData.defaultSchema).to.eql('Kims');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Both schemas are returned\", function () {\r",
+									"    pm.expect(responseData.schemas).to.eql(expectedSchemas);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "bff5c91b-764c-45b7-a8cb-296268077d46",
+								"exec": [
+									"pm.environment.set(\"expectedSchemas\", [\r",
+									"        \"KChief\",\r",
+									"        \"Kims\"\r",
+									"    ]);\r",
+									"expectedSchemas = pm.environment.get(\"expectedSchemas\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "ee51dbd3-70b4-4b7f-aa6e-c5c7b4f5a689",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/schemas",
+						"description": "Generated from cURL: curl -X GET --header 'Accept: application/json' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/schemas'"
+					},
+					"response": []
+				},
+				{
+					"name": "625823. GET /api/metadata/types",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "1e21ca74-9e36-4a71-9093-aa3abf8e70e0",
+								"exec": [
+									"pm.environment.set(\"expectedTypesArray\", JSON.stringify([\r",
+									"    { name: \"NoType\", value: 0 },\r",
+									"    { name: \"Bool\", value: 1 },\r",
+									"    { name: \"Sbyte\", value: 2 },\r",
+									"    { name: \"Byte\", value: 3 },\r",
+									"    { name: \"Int16\", value: 4 },\r",
+									"    { name: \"Uint16\", value: 5 },\r",
+									"    { name: \"Int32\", value: 6 },\r",
+									"    { name: \"Uint32\", value: 7 },\r",
+									"    { name: \"Int64\", value: 8 },\r",
+									"    { name: \"Uint64\", value: 9 },\r",
+									"    { name: \"Float\", value: 10 },\r",
+									"    { name: \"Double\", value: 11 },\r",
+									"    { name: \"DateTime\", value: 15 },\r",
+									"    { name: \"Text\", value: 20 }\r",
+									"]));\r",
+									"\r",
+									"// Get the Postman variable (assumed to be a stringified JSON array)\r",
+									"expectedTypesJSON = JSON.parse(pm.environment.get(\"expectedTypesArray\"));\r",
+									"console.log(expectedTypesJSON)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "96feabf6-18fb-485a-8f2f-475bf257748c",
+								"exec": [
+									"// Parse the response JSON\r",
+									"let responseJSON = pm.response.json();\r",
+									"\r",
+									"// Function to deep compare two objects (including sorting keys)\r",
+									"function deepCompareObjects(obj1, obj2) {\r",
+									"    // If both are objects, continue with deep comparison\r",
+									"    if (typeof obj1 === 'object' && obj1 !== null && typeof obj2 === 'object' && obj2 !== null) {\r",
+									"        // Get the keys of both objects and sort them to ensure order doesn't matter\r",
+									"        const keys1 = Object.keys(obj1).sort();\r",
+									"        const keys2 = Object.keys(obj2).sort();\r",
+									"\r",
+									"        // If the sorted keys are different, the objects are not equal\r",
+									"        if (keys1.length !== keys2.length) return false;\r",
+									"\r",
+									"        // Compare each key in both objects\r",
+									"        for (let i = 0; i < keys1.length; i++) {\r",
+									"            const key = keys1[i];\r",
+									"            if (!deepCompareObjects(obj1[key], obj2[key])) {\r",
+									"                return false;\r",
+									"            }\r",
+									"        }\r",
+									"        return true;\r",
+									"    } else {\r",
+									"        // For primitive values, directly compare them\r",
+									"        return obj1 === obj2;\r",
+									"    }\r",
+									"}\r",
+									"\r",
+									"// Perform deep comparison between responseArray and expectedArray\r",
+									"pm.test(\"Response matches expected array\", function () {\r",
+									"    const areEqual = deepCompareObjects(responseJSON, expectedTypesJSON);\r",
+									"    pm.expect(areEqual).to.be.true;  // Assert that they are deeply equal\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "c13643e3-8b1c-42d6-90af-b72046a0142a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/types",
+						"description": "Generated from cURL: curl -X GET --header 'Accept: application/json' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/types'"
+					},
+					"response": []
+				}
+			],
+			"id": "ea187735-4f54-4efd-92fc-4a369aac34ab",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6473c94c-1613-4c4f-a255-d16250aae74d",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6eb091cc-1f28-4050-a476-888e6b1ad1f1",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{access_token}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0e8a5153-dda1-4242-8f7a-f94cd42d3dab",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"const clientId = pm.environment.get(\"Client_ID\");\r",
+					"const clientSecret = pm.environment.get(\"Client_Secret\");\r",
+					"const authUrl = pm.environment.get(\"auth_url\");\r",
+					"const scope = pm.environment.get(\"scope\"); // optional\r",
+					"\r",
+					"const encodedCreds = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');\r",
+					"\r",
+					"const bodyParams = [\r",
+					"  { key: 'grant_type', value: 'client_credentials' }\r",
+					"];\r",
+					"if (scope) {\r",
+					"  bodyParams.push({ key: 'scope', value: scope });\r",
+					"}\r",
+					"\r",
+					"pm.sendRequest({\r",
+					"  url: authUrl,\r",
+					"  method: 'POST',\r",
+					"  header: [\r",
+					"    { key: 'Authorization', value: `Basic ${encodedCreds}` },\r",
+					"    { key: 'Content-Type', value: 'application/x-www-form-urlencoded' },\r",
+					"    { key: 'Accept', value: 'application/json' }\r",
+					"  ],\r",
+					"  body: {\r",
+					"    mode: 'urlencoded',\r",
+					"    urlencoded: bodyParams\r",
+					"  }\r",
+					"}, function (err, res) {\r",
+					"  if (err || res.code !== 200) {\r",
+					"    console.error(\"Token error:\", err || res.text());\r",
+					"    return;\r",
+					"  }\r",
+					"\r",
+					"  const json = res.json();\r",
+					"  pm.environment.set(\"access_token\", json.access_token);\r",
+					"});\r",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7a92d7e9-e8e7-4896-9ed2-d79442441b9c",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "expectedSchemas",
+			"value": ""
+		},
+		{
+			"key": "expectedTypesArray",
+			"value": ""
+		},
+		{
+			"key": "tagName",
+			"value": ""
+		},
+		{
+			"key": "currentTagName",
+			"value": ""
+		},
+		{
+			"key": "counter",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "auth_url",
+			"value": "https://192.168.166.14/Security/auth/connect/token",
+			"type": "default"
+		},
+		{
+			"key": "Client_ID",
+			"value": "postman.backend",
+			"type": "default"
+		},
+		{
+			"key": "Client_Secret",
+			"value": "YwZ3OaRKier4cVhqpXA72",
+			"type": "default"
+		},
+		{
+			"key": "access_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "scope",
+			"value": "poseidonbackend",
+			"type": "string"
+		},
+		{
+			"key": "collectionBaseURL",
+			"value": "http://192.168.166.14:11000",
+			"type": "string"
+		}
+	]
+}
