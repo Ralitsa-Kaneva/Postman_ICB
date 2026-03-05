@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "90c94f5b-ec94-404f-9df9-9f5aa311ced5",
+		"name": "Automation: Vessel Controller: Properties check",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "195943: K-IMS API: Run api/v1/Vessels('Vessel Name')/Tags('Attribute name') GET Request and check for Data Reference information",
+			"id": "6f2d9618-4bc2-4841-9986-e4dd5c615e90",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}:{{port}}api/v1/Vessels('Vessel Name')/Tags('Attribute name')"
+			},
+			"response": []
+		},
+		{
+			"name": "195944: K-IMS API: Run api/v1/Vessels('Vessel Name')/Tags('Attribute Name') GET Request and check for Oldest value date information",
+			"id": "c639dcc8-cf75-4cce-88df-6061a19a4698",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}:{{port}}api/v1/Vessels('Vessel Name')/Tags('Attribute name')"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{Password}}",
+			"username": "{{User}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3c32bcb9-64d6-4462-bddc-74609f601d40",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4a1e9b91-caf2-4c73-b71a-5035db1d72b9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
