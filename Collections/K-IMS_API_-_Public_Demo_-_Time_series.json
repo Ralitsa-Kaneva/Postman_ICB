@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "30bf90b3-dea0-4494-86df-fb50bf6e70b0",
+		"name": "K-IMS API - Public Demo - Time series",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Vessels",
+			"id": "385a9364-4f49-4625-950f-2c3eb59c3d6b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://kimsapi.demo.kognif.ai/Routing/KIMSAPI/vessels"
+			},
+			"response": []
+		},
+		{
+			"name": "Vessel1 - Timeseries - list",
+			"id": "2294e15f-6d80-45a9-8ed8-acd143ece75e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://kimsapi.demo.kognif.ai/Routing/KIMSAPI/Vessels('OSV1')/Tags"
+			},
+			"response": []
+		},
+		{
+			"name": "Vessel1 - Timeseries - values",
+			"id": "294d0029-537a-471a-89a0-3c6c317c0e7f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kimsapi.demo.kognif.ai/Routing/KIMSAPI/Vessels('OSV1')/Tags('Power_DGx_Load_kw')/Values?from=2021-08-05T20:00&to=2021-08-07T20:30",
+					"protocol": "https",
+					"host": [
+						"kimsapi",
+						"demo",
+						"kognif",
+						"ai"
+					],
+					"path": [
+						"Routing",
+						"KIMSAPI",
+						"Vessels('OSV1')",
+						"Tags('Power_DGx_Load_kw')",
+						"Values"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2021-08-05T20:00"
+						},
+						{
+							"key": "to",
+							"value": "2021-08-07T20:30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vessel1 - Timeseries - Interpolated values",
+			"id": "a0ff2315-e0d5-4d9c-84d2-8d2ed8f1c5df",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kimsapi.demo.kognif.ai/Routing/KIMSAPI/Vessels('OSV1')/Tags('Power_DGx_Load_kw')/Values?interval=1m",
+					"protocol": "https",
+					"host": [
+						"kimsapi",
+						"demo",
+						"kognif",
+						"ai"
+					],
+					"path": [
+						"Routing",
+						"KIMSAPI",
+						"Vessels('OSV1')",
+						"Tags('Power_DGx_Load_kw')",
+						"Values"
+					],
+					"query": [
+						{
+							"key": "interval",
+							"value": "1m"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vessel1 - Timeseries - Raw values",
+			"id": "e6411e85-6dbd-49bd-a8d4-8d376e78ea36",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kimsapi.demo.kognif.ai/Routing/KIMSAPI/Vessels('OSV1')/Tags('Power_DGx_Load_kw')/Values?sampling-mode=raw",
+					"protocol": "https",
+					"host": [
+						"kimsapi",
+						"demo",
+						"kognif",
+						"ai"
+					],
+					"path": [
+						"Routing",
+						"KIMSAPI",
+						"Vessels('OSV1')",
+						"Tags('Power_DGx_Load_kw')",
+						"Values"
+					],
+					"query": [
+						{
+							"key": "sampling-mode",
+							"value": "raw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vessel1 - Timeseries - Calculated Values - Average,Max,Min",
+			"id": "6c319c6e-cc5b-4dcc-a784-16cf614f51e2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kimsapi.demo.kognif.ai/Routing/KIMSAPI/Vessels('OSV1')/Tags('Power_DGx_Load_kw')/CalculatedValues?method=Average,Max,Min&interval=5m&from=2021-08-19T00:00:00&to=2021-08-20T00:00:00",
+					"protocol": "https",
+					"host": [
+						"kimsapi",
+						"demo",
+						"kognif",
+						"ai"
+					],
+					"path": [
+						"Routing",
+						"KIMSAPI",
+						"Vessels('OSV1')",
+						"Tags('Power_DGx_Load_kw')",
+						"CalculatedValues"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "Average,Max,Min"
+						},
+						{
+							"key": "interval",
+							"value": "5m"
+						},
+						{
+							"key": "from",
+							"value": "2021-08-19T00:00:00"
+						},
+						{
+							"key": "to",
+							"value": "2021-08-20T00:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vessel1 - Timeseries - Calculated Values - All",
+			"id": "db689a3d-0cd3-49db-97b1-6d590c9eb84b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kimsapi.demo.kognif.ai/Routing/KIMSAPI/Vessels('OSV1')/Tags('Power_DGx_Load_kw')/CalculatedValues?interval=1h&from=2021-08-19T00:00:00&to=2021-08-20T00:00:00",
+					"protocol": "https",
+					"host": [
+						"kimsapi",
+						"demo",
+						"kognif",
+						"ai"
+					],
+					"path": [
+						"Routing",
+						"KIMSAPI",
+						"Vessels('OSV1')",
+						"Tags('Power_DGx_Load_kw')",
+						"CalculatedValues"
+					],
+					"query": [
+						{
+							"key": "interval",
+							"value": "1h"
+						},
+						{
+							"key": "from",
+							"value": "2021-08-19T00:00:00"
+						},
+						{
+							"key": "to",
+							"value": "2021-08-20T00:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vessel1 - Statistics",
+			"id": "8f78971e-da0a-4a01-8197-742d8758352c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kimsapi.demo.kognif.ai/Routing/KIMSAPI/Vessels('OSV1')/Tags('Power_DGx_Load_kw')/Statistics?from=2020-06-14T20:00&to=2020-06-14T20:30",
+					"protocol": "https",
+					"host": [
+						"kimsapi",
+						"demo",
+						"kognif",
+						"ai"
+					],
+					"path": [
+						"Routing",
+						"KIMSAPI",
+						"Vessels('OSV1')",
+						"Tags('Power_DGx_Load_kw')",
+						"Statistics"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2020-06-14T20:00"
+						},
+						{
+							"key": "to",
+							"value": "2020-06-14T20:30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://bwgastest.kognif.ai/Routing/KIMSAPI/Vessels",
+			"id": "2ccaa8af-68ac-4a9d-aae3-f3e807e927c8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "Custom but str0ng password!",
+						"username": "api2"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://bwgastest.kognif.ai/Routing/KIMSAPI/Vessels"
+			},
+			"response": []
+		},
+		{
+			"name": "Bug fix 1",
+			"id": "4a980497-91ea-49dc-b2f1-f2104f661930",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "Ingen k-ims, ingen ko5",
+						"username": "api"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://10.64.62.11/Routing/KIMSAPI/Vessels('Golar Bear')/Tags('TimescaleTest')/Values"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"username": "api",
+			"password": "kimsAPIdemoDemo12345"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "e22eb392-8cb4-449b-82c2-18a98e3eac8c"
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "7f941f90-2539-4e91-bfb3-308ae7629289"
+			}
+		}
+	]
+}
