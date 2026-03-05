@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "7c1a8e77-d0d9-4bd1-a074-c62926a4a81b",
+		"name": "Automation: Vessel Controller: Vessels and elements",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "340335.Get all Vessels with the api node",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4a2e569c-ac5f-45c4-88d2-f0e3b96980fa",
+						"exec": [
+							"//Assign variables\r",
+							"  //Get the response body as json\r",
+							"    response = pm.response.json();\r",
+							"    responseValues = response.value;\r",
+							"  //Get the response values count\r",
+							"    len = responseValues.length;\r",
+							"\r",
+							"\r",
+							"//Fill the actualVesselsArray array\r",
+							"        for(i = 0; i < len; i++)\r",
+							"        {\r",
+							"            currentVessel = responseValues[i].Name;\r",
+							"            actualVesselsArr.push(currentVessel);\r",
+							"            if(!((\"Name\" in responseValues[i]) && (\"IMO\" in responseValues[i]))) \r",
+							"            {\r",
+							"                count++\r",
+							"            }  \r",
+							"        }\r",
+							"\r",
+							"//Function that checks if all elements in arrayB are equal to all elements in arrayA\r",
+							"    function equalArray(arrayA, arrayB) \r",
+							"    {\r",
+							"        if (arrayA.sort().length === arrayB.sort().length) \r",
+							"        {\r",
+							"            for (var i = 0; i < arrayA.length; i++) \r",
+							"            {\r",
+							"                if (arrayA[i].toLowerCase() !== arrayB[i].toLowerCase()) \r",
+							"                {\r",
+							"                    console.log(\"The elements in both arrays are not equal\");\r",
+							"                    return false;\r",
+							"                }\r",
+							"            }\r",
+							"            return true;\r",
+							"        } \r",
+							"        else \r",
+							"        {\r",
+							"            return false;\r",
+							"        }\r",
+							"    }\r",
+							"\r",
+							"//Tests\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Only 2 properties are retunred for the vessels\", function () {\r",
+							"    const elementsWith2Values = responseValues.filter(item => Object.keys(item).length === 2);\r",
+							"    pm.expect((elementsWith2Values.length == len), \"There are more than two properties returned for the vessel\").to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains Name and IMO keys\", function () {\r",
+							"    pm.expect(count, \"Name or IMO property is missing\").to.equals(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Only vessels with API node are returned\", function () {\r",
+							"        pm.expect(equalArray(actualVesselsArr, vesselsWithApiNodeArr),\"Not all listed vessels contain API node\").to.be.true;\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "05479bce-cd23-4723-9504-5c46e36ca3cf",
+						"exec": [
+							"//Assign variables\r",
+							"  //Create empty array which will be filled with all available vessels which have element with the api node name\r",
+							"    actualVesselsArr = [];\r",
+							"  //Get environment variable value\r",
+							"    vesselsWithApiNodeArr = (pm.environment.get('vesselsWithApiNode')).split(\",\");\r",
+							"  //Helping variable \r",
+							"   count = 0"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "77e80805-bc9a-4fa2-b35a-3c9bb2399298",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Vessels",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Vessels"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "Tags",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Return all vessels which have the configured api node as element"
+			},
+			"response": []
+		},
+		{
+			"name": "340335.Get all Vessels with the api node Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4a2e569c-ac5f-45c4-88d2-f0e3b96980fa",
+						"exec": [
+							"//Assign variables\r",
+							"  //Get the response body as json\r",
+							"   let response = pm.response.json();\r",
+							"   let responseValues = response.value;\r",
+							"\r",
+							"//Tests\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Only 2 properties are returned for the vessels\", function () {\r",
+							"    const moreThan2Params = responseValues.filter(item => Object.keys(item).length !== 2);\r",
+							"    pm.expect((moreThan2Params.length === 0), \"There are more or less than two properties returned for the vessel\").to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains Name and IMO keys\", function () {\r",
+							"    let vesselProperties = JSON.parse(pm.environment.get(\"vesselProperties\"));\r",
+							"    let isCorrectProperties = responseValues.every(item => {\r",
+							"        for(let i = 0; i < Object.keys(item).length; i++) {\r",
+							"            // console.log(Object.keys(item).length)\r",
+							"            // console.log(i)\r",
+							"            // console.log(Object.keys(item)[i]);\r",
+							"            // console.log(vesselProperties[i]);\r",
+							"            if (Object.keys(item)[i] !== vesselProperties[i]){\r",
+							"                console.log(\"The elements in both arrays are not equal\");\r",
+							"                return false;\r",
+							"            }\r",
+							"        }\r",
+							"        return true;\r",
+							"    })    \r",
+							"    console.log(isCorrectProperties)\r",
+							"    pm.expect(isCorrectProperties, \"Name or IMO property is missing\").to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Only vessels with API node are returned\", function () {\r",
+							"        pm.expect(equalArray(actualVesselsArr, vesselsWithApiNodeArr),\"Not all listed vessels contain API node\").to.be.true;\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "05479bce-cd23-4723-9504-5c46e36ca3cf",
+						"exec": [
+							"//Assign variables\r",
+							"  //Create empty array which will be filled with all available vessels which have element with the api node name\r",
+							"    actualVesselsArr = [];\r",
+							"  //Get environment variable value\r",
+							"    vesselsWithApiNodeArr = (pm.environment.get('vesselsWithApiNode')).split(\",\");\r",
+							"  //Helping variable \r",
+							"   count = 0"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "4a0136ce-1e3d-4953-96e7-e17b712204c2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Vessels",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Vessels"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "Tags",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Return all vessels which have the configured api node as element"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"username": "{{ApiUser}}",
+			"password": "{{Password}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "24a0a423-89e6-4160-9179-a8768184a78c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "38493b19-b55e-4bbc-8738-7774fb3c65e9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
