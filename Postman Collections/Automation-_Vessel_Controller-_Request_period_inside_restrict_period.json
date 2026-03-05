@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "1ab2e998-2917-4a4f-9614-0733fa57aeda",
+		"name": "Automation: Vessel Controller: Request period inside restrict period",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "199227: K-IMS API: Run /api/v1/Vessels('VesselName')/Tags('AttributeName')/Values endpoint for restricted period",
+			"id": "581a3bfc-c82c-488b-96c8-af5fef0458c4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Vessels('{{vessel}}')/Tags('{{goodDataAttNum}}')/Values?From&To",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Vessels('{{vessel}}')",
+						"Tags('{{goodDataAttNum}}')",
+						"Values"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": null,
+							"type": "text"
+						},
+						{
+							"key": "To",
+							"value": null,
+							"type": "text"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[A]199228. Run /api/v1/Vessels('VesselName')/Tags endpoint with expand parameter for restricted period",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4c9c17dd-db1b-46ad-975a-22a3e0dc7156",
+						"exec": [
+							"//Define variables\r",
+							"    var responseText = pm.response.text();\r",
+							"    var pattern =/Timestamp\":\"2023-01-17T[0-9]{2}:[0-9]{2}:[0-9]{2}\\+02:00/\r",
+							"    var pattern2 =/Timestamp\":\"2023-01-18T00:00:00\\+02:00/\r",
+							"    var result = responseText.match(pattern);\r",
+							"    var result2 = responseText.match(pattern2);\r",
+							"    console.log(result)\r",
+							"    console.log(result2)\r",
+							"\r",
+							"// Define a condition that you want to check (in this case, a boolean variable)\r",
+							"    var isConditionTrue = (result == null && result2 == null);\r",
+							"\r",
+							"    if (!isConditionTrue)\r",
+							"    {\r",
+							"         console.log(\"Pattern 1 result is: \" + result)\r",
+							"         console.log(\"Pattern 2 result is: \" + result2)\r",
+							"    }\r",
+							"\r",
+							"//Tests\r",
+							"\r",
+							"    pm.test(\"Status code is 200\", function () {\r",
+							"        pm.response.to.have.status(200);\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"Check for restricted values\", function () {\r",
+							"        pm.expect(isConditionTrue, 'Condition should be true').to.be.true;\r",
+							"    });\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "fd489a8a-afcd-4476-aa58-809a34c6fb67",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Vessels('{{vessel}}')/Tags?$expand=values&From=2023-01-15T22:00:00Z&To=2023-01-18T22:00:00Z",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Vessels('{{vessel}}')",
+						"Tags"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "values"
+						},
+						{
+							"key": "From",
+							"value": "2023-01-15T22:00:00Z"
+						},
+						{
+							"key": "To",
+							"value": "2023-01-18T22:00:00Z"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "199229: K-IMS API: Run /api/v1/Vessels('VesselName')/Tags('AttributeName')/Statistics endpoint for restricted period",
+			"id": "1e05af89-d478-43fa-a133-3428267b1fb1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Vessels('{{vessel}}')/Tags('{{goodDataAttNum}}')/Statistics?From&To",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Vessels('{{vessel}}')",
+						"Tags('{{goodDataAttNum}}')",
+						"Statistics"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": null,
+							"type": "text"
+						},
+						{
+							"key": "To",
+							"value": null,
+							"type": "text"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "199230: K-IMS API: Run /api/v1/Vessels('VesselName')/Tags('AttributeName')/CalculatedValues endpoint for restricted period",
+			"id": "73d4c3d8-50f3-47c3-b86c-967fd57d160d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Vessels('{{vessel}}')/Tags('{{goodDataAttNum}}')/CalculatedValues?From&To&interval",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Vessels('{{vessel}}')",
+						"Tags('{{goodDataAttNum}}')",
+						"CalculatedValues"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": null,
+							"type": "text"
+						},
+						{
+							"key": "To",
+							"value": null,
+							"type": "text"
+						},
+						{
+							"key": "interval",
+							"value": null,
+							"type": "text"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "199231: K-IMS API: Run /api/v1/Vessels('VesselName)/TimeFrames endpoint for restricted period",
+			"id": "74afe013-bee5-4cba-a295-c0a38191dd25",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Vessels('{{vessel}})/TimeFrames?Template&From&To",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Vessels('{{vessel}})",
+						"TimeFrames"
+					],
+					"query": [
+						{
+							"key": "Template",
+							"value": null,
+							"type": "text"
+						},
+						{
+							"key": "From",
+							"value": null,
+							"type": "text"
+						},
+						{
+							"key": "To",
+							"value": null,
+							"type": "text"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{Password}}",
+			"username": "{{User}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3c32bcb9-64d6-4462-bddc-74609f601d40",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4a1e9b91-caf2-4c73-b71a-5035db1d72b9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
