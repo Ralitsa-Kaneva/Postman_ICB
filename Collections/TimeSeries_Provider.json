@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "44c9187e-72bf-4bac-8ed1-5c3d91b85f9f",
+		"name": "TimeSeries Provider",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Metadata / Search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b9b3eb6a-af3c-4e39-957d-426c560aa2d8",
+						"exec": [
+							"pm.test(\"Body is correct\" , function () {\r",
+							"    pm.response.to.have.body('{\"message\":\"Authorization has been denied for this request.\"}');\r",
+							"});\r",
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(401);\r",
+							"});\r",
+							"pm.test(\"Status code name has Unauthorized\", function () {\r",
+							"    pm.response.to.have.status(\"Unauthorized\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "147982ef-b5eb-4bcc-873f-58ee84d26537",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "VesselID",
+						"type": "text",
+						"value": "-1"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSIsImtpZCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSJ9.eyJpc3MiOiJodHRwOi8vMTAuNDguMi4xMzIvU2VjdXJpdHkvYXV0aCIsImF1ZCI6Imh0dHA6Ly8xMC40OC4yLjEzMi9TZWN1cml0eS9hdXRoL3Jlc291cmNlcyIsImV4cCI6MTU4MTM0ODU0NywibmJmIjoxNTgxMzQ3OTQ3LCJjbGllbnRfaWQiOiJwb3NlaWRvbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJwb3NlaWRvbmJhY2tlbmQiXSwic3ViIjoiNmQ3OTcwMWUtZDY1Yy00ZDhhLWEzNWItMmI2ZjcyMmEzZWQyIiwiYXV0aF90aW1lIjoxNTgwOTc5MDcxLCJpZHAiOiJpZHNydiIsInBvc2VpZG9uYmFja2VuZCI6InBvc2VpZG9uYmFja2VuZCIsIm5hbWUiOiJtaXNobyIsInJvbGUiOiJtaXNobyIsImFtciI6WyJwYXNzd29yZCJdfQ.Xba1L-uX7QCrtuNwGb1auwKVdbnRXv4e4qjKgdtTLkzaSlfflPwOGqEs1L_ibDrS2VvnSiLuQaVmZ9evD9QH8EOZr2j9_EqI6RQHp-sczFik5cxqNz4JXYMsaWqECPXnpGZ2-T7iPD7UXTaaZtDpiss6MA0biiw0dR7CzWfn46TJohA07sZwcWHu50RnZFFTwYPGMr2_cTK7Iu_rf6Z0ppwlOZWsb9Xy4CvhZ7rVyq2YveUOMTVMw5nz6R3BNyHtE3TrwFjo6X3tO6vH8frrspH7gML5dv_gubMp0uk2-trnMODJePT0JNgJkNHkn5wXColTTsanfxybhnp4pz81Iw"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}routing/platform/kims-timeseries/api/metadata/search?tagMask=*&descriptionMask=*&replicationStatus=0&maxResult=5",
+					"host": [
+						"{{base_url}}routing"
+					],
+					"path": [
+						"platform",
+						"kims-timeseries",
+						"api",
+						"metadata",
+						"search"
+					],
+					"query": [
+						{
+							"key": "tagMask",
+							"value": "*"
+						},
+						{
+							"key": "descriptionMask",
+							"value": "*"
+						},
+						{
+							"key": "replicationStatus",
+							"value": "0"
+						},
+						{
+							"key": "maxResult",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Metadata / Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dcdf3dbf-2dfc-4e84-9742-b3ed05bacc9b",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body('{\"message\":\"Authorization has been denied for this request.\"}');\r",
+							"});\r",
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"pm.test(\"Status code name has Unauthorized\", function () {\r",
+							"    pm.response.to.have.status(\"Unauthorized\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8f8e3957-3c27-471d-aaa9-167f27e90ea3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "VesselId",
+						"type": "text",
+						"value": "-1"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSIsImtpZCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSJ9.eyJpc3MiOiJodHRwOi8vMTAuNDguMi4xMzIvU2VjdXJpdHkvYXV0aCIsImF1ZCI6Imh0dHA6Ly8xMC40OC4yLjEzMi9TZWN1cml0eS9hdXRoL3Jlc291cmNlcyIsImV4cCI6MTU4MTM0OTA4NywibmJmIjoxNTgxMzQ4NDg3LCJjbGllbnRfaWQiOiJwb3NlaWRvbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJwb3NlaWRvbmJhY2tlbmQiXSwic3ViIjoiNmQ3OTcwMWUtZDY1Yy00ZDhhLWEzNWItMmI2ZjcyMmEzZWQyIiwiYXV0aF90aW1lIjoxNTgwOTc5MDcxLCJpZHAiOiJpZHNydiIsInBvc2VpZG9uYmFja2VuZCI6InBvc2VpZG9uYmFja2VuZCIsIm5hbWUiOiJtaXNobyIsInJvbGUiOiJtaXNobyIsImFtciI6WyJwYXNzd29yZCJdfQ.XKGVWqxhAKm6ogTLrdxRwEuanPj6mhriZGk9xC9tbjfxvkr-kIAjqOA8KzOVqOQ69evgpZM1DoH9Cg462TnxlOb-g22Gw6AK-Iw6LeozwTThvCRRUp3lkpQU2qCpGkDtxUwPogd5BU74ezTD05WZ1fvBxre2y7fY7X-s3D5SHIhMI78iyV4_nbUnjNkmmRl_yf08g6CrctSYTVkmChkLrH7cEYb2XJ7ie_GKX-h3rO8JKCTKE0o295LANMcAiqPf4jmsr5VAG_NiL-l8LxiWkiWftu_f6xgApIm0qSefgsUx1yGA6y9GdgSQr-7dwhK9R4fqizFcYYGGjSobBGs1Yg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"Chicago_Pressure\"]"
+				},
+				"url": "{{base_url}}routing/platform/kims-timeseries/api/metadata/details"
+			},
+			"response": []
+		},
+		{
+			"name": "Plot / All-Batch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f156cabc-d360-4975-9073-8732f13de9d6",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body('{\"message\":\"Authorization has been denied for this request.\"}');\r",
+							"});\r",
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"pm.test(\"Status code name has Unauthorized\", function () {\r",
+							"    pm.response.to.have.status(\"Unauthorized\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "97b216de-d706-42dd-91cb-187820b2f4db",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSIsImtpZCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSJ9.eyJpc3MiOiJodHRwOi8vMTAuNDguMi4xMzIvU2VjdXJpdHkvYXV0aCIsImF1ZCI6Imh0dHA6Ly8xMC40OC4yLjEzMi9TZWN1cml0eS9hdXRoL3Jlc291cmNlcyIsImV4cCI6MTU4MTM0OTYyOCwibmJmIjoxNTgxMzQ5MDI4LCJjbGllbnRfaWQiOiJwb3NlaWRvbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJwb3NlaWRvbmJhY2tlbmQiXSwic3ViIjoiNmQ3OTcwMWUtZDY1Yy00ZDhhLWEzNWItMmI2ZjcyMmEzZWQyIiwiYXV0aF90aW1lIjoxNTgwOTc5MDcxLCJpZHAiOiJpZHNydiIsInBvc2VpZG9uYmFja2VuZCI6InBvc2VpZG9uYmFja2VuZCIsIm5hbWUiOiJtaXNobyIsInJvbGUiOiJtaXNobyIsImFtciI6WyJwYXNzd29yZCJdfQ.vSpQ3xDjXsg-di1bvnSTe98g3EIetpqLMMJe-QnCaHsmMp35dab9Q7eJY4nywrnbYsL314FXjyD9cWjgB4I196YVfzNNtYnDLB5pCMUNjy-nXAYu9Ln9oH_WfKHvCxitKLsjlHFu0FUQkmAszL_4_MqgPvl_zNXlqK1Nw1m0gkDQpvl69V3mp6UD9DBgbJRngdBXYFvy-oFnCEm3pwMKqHNqjp4cViyIpuv31y9BNEd9fRO_xMwET0TTMSQqleKmW6DqwqGtFk6t4Q243EjdvhyttzrccGn5ozZGjPjXVc7ZWWTCAT6BG8hnwHZQK3luJRP1awxYPdXFv-Yz50tF5g",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "VesselId",
+						"value": "-1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"id\":\"Chicago_Pressure\",\"numberOfIntervals\":300,\"start\":\"2020-02-10T15:25:36.000Z\",\"end\":\"2020-02-10T15:35:36.000Z\"}]"
+				},
+				"url": "{{base_url}}routing/platform/kims-timeseries/api/values/plot/all-batch"
+			},
+			"response": []
+		},
+		{
+			"name": "Expression / Analog-Batch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "576fbbdb-208f-45db-985c-9f96ece94c67",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body('{\"message\":\"Authorization has been denied for this request.\"}');\r",
+							"});\r",
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"pm.test(\"Status code name has Unauthorized\", function () {\r",
+							"    pm.response.to.have.status(\"Unauthorized\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "420f1422-bfdc-4aec-bf3c-537b7bfcaa59",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "VesselId",
+						"value": "-1",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSIsImtpZCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSJ9.eyJpc3MiOiJodHRwOi8vMTAuNDguMi4xMzIvU2VjdXJpdHkvYXV0aCIsImF1ZCI6Imh0dHA6Ly8xMC40OC4yLjEzMi9TZWN1cml0eS9hdXRoL3Jlc291cmNlcyIsImV4cCI6MTU4MTM1MDE2OCwibmJmIjoxNTgxMzQ5NTY4LCJjbGllbnRfaWQiOiJwb3NlaWRvbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJwb3NlaWRvbmJhY2tlbmQiXSwic3ViIjoiNmQ3OTcwMWUtZDY1Yy00ZDhhLWEzNWItMmI2ZjcyMmEzZWQyIiwiYXV0aF90aW1lIjoxNTgwOTc5MDcxLCJpZHAiOiJpZHNydiIsInBvc2VpZG9uYmFja2VuZCI6InBvc2VpZG9uYmFja2VuZCIsIm5hbWUiOiJtaXNobyIsInJvbGUiOiJtaXNobyIsImFtciI6WyJwYXNzd29yZCJdfQ.jP28V-qOWWhLQI4x97aGUTrc3q8zmD0-dT0iEnhv9Sv7b-3z-fSuYgkb5KowwLd5aXQtxmPhQMeig_Npa7fHeQU-smn3IEnzW0pvsc9lW_xgNlb2W4Uj69NUhTooxKgd0ziATChNHCGj_aKpqCJtdp1ZQQy_fxs80af2DlHP7wUme9FZjs0QNxKtCX5cnMWhRl2fncuB-mkSKKl5CDTLpHjx3f82iN8qcSsOKtblEVYumCqJSMWvKZMycLR_cmKPcEL8ifbDyQhOEKQ5ofa6-6rgWg9w3k28Z20HHDx79nlqkMcFbs_j-cGwpnReLDHJUGg85Ylqmkg6HpBhw8gXiA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"id\":\"'Chicago_Pressure' + 2\",\"expression\":\"'Chicago_Pressure' + 2\",\"startTimeString\":\"*-0s\",\"endTimeString\":\"*-0s\"}]"
+				},
+				"url": "{{base_url}}routing/platform/kims-timeseries/api/expression/analog-batch"
+			},
+			"response": []
+		},
+		{
+			"name": "Resampled / All-Batch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e92089e0-ca8c-4281-9efe-71cb2b48acfe",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body('{\"message\":\"Authorization has been denied for this request.\"}');\r",
+							"});\r",
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"pm.test(\"Status code name has Unauthorized\", function () {\r",
+							"    pm.response.to.have.status(\"Unauthorized\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "be9f071d-670e-41e6-9f29-a9909cd74449",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSIsImtpZCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSJ9.eyJpc3MiOiJodHRwOi8vMTAuNDguMi4xMzIvU2VjdXJpdHkvYXV0aCIsImF1ZCI6Imh0dHA6Ly8xMC40OC4yLjEzMi9TZWN1cml0eS9hdXRoL3Jlc291cmNlcyIsImV4cCI6MTU4MTQwODU0NywibmJmIjoxNTgxNDA3OTQ3LCJjbGllbnRfaWQiOiJwb3NlaWRvbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJwb3NlaWRvbmJhY2tlbmQiXSwic3ViIjoiNmQ3OTcwMWUtZDY1Yy00ZDhhLWEzNWItMmI2ZjcyMmEzZWQyIiwiYXV0aF90aW1lIjoxNTgwOTc5MDcxLCJpZHAiOiJpZHNydiIsInBvc2VpZG9uYmFja2VuZCI6InBvc2VpZG9uYmFja2VuZCIsIm5hbWUiOiJtaXNobyIsInJvbGUiOiJtaXNobyIsImFtciI6WyJwYXNzd29yZCJdfQ.HN8hUx7dWqvzsstJweuhMIYQSyywpe1fYAZLh4-7-pGcNxLj0keLgTeGCH3etpOk_NkWVQUAbIXpvFv45BsM9ZWzwF5bqL3r2yiLmHW4I7lSkS981JxRAaIgywxJOyAN7f4UlqjRV3shdvnYqY9H6kkeLsujNZ7-xt2PePPNGLrsSIxhRrJtS55kFDnsUcpXlWHCUeaad-dQvT_AseCDHlgTlw_bt2dJeK1F8DUOs4y9-c__hXUIT4KZ1Mmy5JqtcJAa-QymCjGZvyFG9wOD072Q5jEVAOynl7YofPUQX-TYYWJuZh0W3jVKGygRnF-9sObq20zmoo8wG0pC32RZ3g",
+						"type": "text"
+					},
+					{
+						"key": "VesselId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"id\":\"Demo_PE-07\",\"resampleInterval\":\"199ms\",\"start\":\"2018-08-27T09:18:17.795Z\",\"end\":\"2018-08-27T09:28:17.795Z\"},{\"id\":\"Demo_Pe_03\",\"resampleInterval\":\"199ms\",\"start\":\"2018-08-27T09:18:17.795Z\",\"end\":\"2018-08-27T09:28:17.795Z\"}]"
+				},
+				"url": "{{base_url}}routing/platform/kims-timeseries/api/values/resampled/all-batch"
+			},
+			"response": []
+		},
+		{
+			"name": "Metadata / Last Recorded Time",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "083b405e-e58d-4452-90ea-43470249ca5c",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body('{\"message\":\"Authorization has been denied for this request.\"}');\r",
+							"});\r",
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"pm.test(\"Status code name has Unauthorized\", function () {\r",
+							"    pm.response.to.have.status(\"Unauthorized\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "0cb45a25-9a00-43ef-b2c4-179faa30c42a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSIsImtpZCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSJ9.eyJpc3MiOiJodHRwOi8vMTAuNDguMi4xMzIvU2VjdXJpdHkvYXV0aCIsImF1ZCI6Imh0dHA6Ly8xMC40OC4yLjEzMi9TZWN1cml0eS9hdXRoL3Jlc291cmNlcyIsImV4cCI6MTU4MTQyMzA2NiwibmJmIjoxNTgxNDIyNDY2LCJjbGllbnRfaWQiOiJwb3NlaWRvbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJwb3NlaWRvbmJhY2tlbmQiXSwic3ViIjoiNmQ3OTcwMWUtZDY1Yy00ZDhhLWEzNWItMmI2ZjcyMmEzZWQyIiwiYXV0aF90aW1lIjoxNTgwOTc5MDcxLCJpZHAiOiJpZHNydiIsInBvc2VpZG9uYmFja2VuZCI6InBvc2VpZG9uYmFja2VuZCIsIm5hbWUiOiJtaXNobyIsInJvbGUiOiJtaXNobyIsImFtciI6WyJwYXNzd29yZCJdfQ.VGYYt2JjtpGPTdZx6XUFRbxndq66d_7YIojT-r3fO1t5FsIlzK3aLmRlajXD_Pp1lcItb7Fu-Q4rSXoQCzRF7fNuGkYlQX2WaAn-8bUyTCipLfsiR_vWzOVJuL6r7I_v5IWJlPl-Au-9CANPT0o_x3M78y-4RaKwucN7SaEmBGbVyLB4B1w6Nxs0GVvFMQPLx4IqLQOJHcXw0JfPkDoU4CLbKpMq9J2l16T-lgbQqvmRWKt_N1q9ifthypoxFs-tDuMpLKRYM88p01NWI8SExw4WuyNg4l2OpBpdruZklKmfPfZdZinucsjZyZKnCH-i-VUGoY_myaT3Ch158XT-ZA",
+						"type": "text"
+					},
+					{
+						"key": "VesselId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}routing/platform/kims-timeseries/api/metadata/last-recorded-time?endTimeString=*-0s&id=Chicago_Humidity&startTimeString=*-0s",
+					"host": [
+						"{{base_url}}routing"
+					],
+					"path": [
+						"platform",
+						"kims-timeseries",
+						"api",
+						"metadata",
+						"last-recorded-time"
+					],
+					"query": [
+						{
+							"key": "endTimeString",
+							"value": "*-0s"
+						},
+						{
+							"key": "id",
+							"value": "Chicago_Humidity"
+						},
+						{
+							"key": "startTimeString",
+							"value": "*-0s"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "At Time / All Batch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a127a88c-f08c-455e-bc3c-dc654bc83527",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body('{\"message\":\"Authorization has been denied for this request.\"}');\r",
+							"});\r",
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"pm.test(\"Status code name has Unauthorized\", function () {\r",
+							"    pm.response.to.have.status(\"Unauthorized\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "721046e1-d2b5-429e-88e0-26d45f2749ac",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSIsImtpZCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSJ9.eyJpc3MiOiJodHRwOi8vMTAuNDguMi4xMzIvU2VjdXJpdHkvYXV0aCIsImF1ZCI6Imh0dHA6Ly8xMC40OC4yLjEzMi9TZWN1cml0eS9hdXRoL3Jlc291cmNlcyIsImV4cCI6MTU4MTQyNzg2OSwibmJmIjoxNTgxNDI3MjY5LCJjbGllbnRfaWQiOiJwb3NlaWRvbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJwb3NlaWRvbmJhY2tlbmQiXSwic3ViIjoiYmEzZmFhYTctNmMxOC00NDRlLWJkYmItMjQ3YWVmMmRhMDhhIiwiYXV0aF90aW1lIjoxNTgxNDI1NjQ2LCJpZHAiOiJpZHNydiIsInBvc2VpZG9uYmFja2VuZCI6InBvc2VpZG9uYmFja2VuZCIsIm5hbWUiOiJhZG1pbiIsInJvbGUiOiJBZG1pbmlzdHJhdG9yIiwiYW1yIjpbInBhc3N3b3JkIl19.Zhnbp9OXxQ3a_AFiMRwMgkw1DDmSIP-mHm_dnPhtb4brdBpEp4JvtvKo4qwMYsoeaoFpWCpM5gyzX2ipiyr2DvXGDUvpRzOs_NhVlqLZnu_kt4jSBEzIT3lVumzaZ2APvWPX1uTvtiCkfGDKuxIlioCDANHUOWzNz_pD07cMxUXH3XzKP3CxjTMgGV9mhTNS4iWBEWMHBBKg2hKIS5d8wWexVtCiin1mX_cdygyxn-lOaOPizbiZ_ByIQF7uK2u18_e7UNCWHpqbU7_3jw1LkXrihlQKPwJNHzLb58dlVujepkk5TuIu7n2D2oZRXXB-MWAZXXUz2M1kmqt0laM0mA",
+						"type": "text"
+					},
+					{
+						"key": "VesselId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"id\":\"Chicago_Wind Speed\",\"boundaryType\":\"interpolated\",\"startTimeString\":\"*-0s\"},{\"id\":\"Chicago_Visibility\",\"boundaryType\":\"interpolated\",\"startTimeString\":\"*-0s\"},{\"id\":\"Chicago_Wind Speed\",\"boundaryType\":\"interpolated\",\"startTimeString\":\"*-0s\"},{\"id\":\"Chicago_Temperature\",\"boundaryType\":\"interpolated\",\"startTimeString\":\"*-0s\"}]"
+				},
+				"url": "{{base_url}}routing/platform/kims-timeseries/api/values/at-time/all-batch"
+			},
+			"response": []
+		}
+	]
+}
