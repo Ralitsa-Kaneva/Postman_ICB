@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "be7e050f-b563-4215-92a6-cf82e157779f",
+		"name": "Automation: Vessel Controller: Default Interpolated values (for the last 10 minutes with 1 min resolution)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[AM]195348. Run GET TagsValues endpoint for AF element with attribute with bad values",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8c7c8950-159f-42e9-ad91-58300bc1c582",
+						"exec": [
+							"//Common tests\r",
+							"    pm.test(\"Status code is 200\", function () {\r",
+							"        pm.response.to.have.status(200);\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"X-Powered-By header is present\", function () {\r",
+							"        pm.response.to.have.header(\"X-Powered-By\");\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"X-Powered-By header value is Unknown\", function () {\r",
+							"    pm.response.to.be.header(\"X-Powered-By\", \"Unknown\");\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"Server header is present\", function () {\r",
+							"        pm.response.to.have.header(\"Server\");\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"Server header value is Unknown\", function () {\r",
+							"    pm.response.to.be.header(\"Server\", \"Unknown\");\r",
+							"    });\r",
+							"\r",
+							"//Tests\r",
+							"\r",
+							"    let jsonData = pm.response.json() \r",
+							"    pm.test('Tags with bad values return Quality Bad', () => { _.each(jsonData.value, (item) => \r",
+							"    { pm.expect(item.Quality).to.be.equal('Bad') }) \r",
+							"    });\r",
+							"\r",
+							"    pm.test('Tags with bad values return Value null', () => { _.each(jsonData.value, (item) => \r",
+							"    { pm.expect(item.Value).to.be.equal(null) }) \r",
+							"    });\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4be11e99-0f5d-41c6-8172-41e930eabb45",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Vessels('{{vessel}}')/Tags('{{badDataAtt}}')/values",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Vessels('{{vessel}}')",
+						"Tags('{{badDataAtt}}')",
+						"values"
+					],
+					"query": [
+						{
+							"key": "sampling-mode",
+							"value": "raw",
+							"description": "Returns recorded values",
+							"disabled": true
+						},
+						{
+							"key": "From",
+							"value": "2022-11-23T12:55:00Z",
+							"description": "Start time",
+							"disabled": true
+						},
+						{
+							"key": "To",
+							"value": "2023-01-17T13:10:00Z",
+							"description": "End time",
+							"disabled": true
+						},
+						{
+							"key": "interval",
+							"value": "1h",
+							"description": "Returns values with the selected interval",
+							"disabled": true
+						},
+						{
+							"key": "repeat",
+							"value": "latest",
+							"description": "Repeats the latest recorded value",
+							"disabled": true
+						},
+						{
+							"key": "repeat",
+							"value": "renew-timestamps",
+							"disabled": true
+						}
+					]
+				},
+				"description": "This endpoint will display interpolated values for the last 10 minutes with 1 minute interval.\n\nThe displayed properties are:\n\n\"Value\":  -> Contains \"null\", if the value is bad         \n\"Timestamp\": -> Contains timestamp in local time sorted ascending  \n\"Quality\": -> Contains \"Bad\"     \n\"QualityInfo\":  -> Contains the bad data state, e.g. \"Error\""
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{Password}}",
+			"username": "{{User}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3c32bcb9-64d6-4462-bddc-74609f601d40",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4a1e9b91-caf2-4c73-b71a-5035db1d72b9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
