@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "a0f2c104-e8e9-4070-8315-885428c0f9f3",
+		"name": "Automation: Vessel Controller: Excluded attributes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[AM]195096 Check if AF element's attributes with property: Excluded are returned by Tags GET requests",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "70b5d8ca-eb54-463f-982e-a7af5d6297c7",
+						"exec": [
+							"//Check Status cpde\r",
+							"    pm.test(\"Status code is 200\", function () {\r",
+							"        pm.response.to.have.status(200);\r",
+							"    });\r",
+							"\r",
+							"//Check headers\r",
+							"    pm.test(\"X-Powered-By header is present\", function () {\r",
+							"        pm.response.to.have.header(\"X-Powered-By\");\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"X-Powered-By header value is Unknown\", function () {\r",
+							"    pm.response.to.be.header(\"X-Powered-By\", \"Unknown\");\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"Server header is present\", function () {\r",
+							"        pm.response.to.have.header(\"Server\");\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"Server header value is Unknown\", function () {\r",
+							"    pm.response.to.be.header(\"Server\", \"Unknown\");\r",
+							"    });\r",
+							"\r",
+							"//Main Tests\r",
+							"    pm.test(\"Excluded attribute not included in the result\", function () {\r",
+							"        let excludedAttributes = pm.collectionVariables.get(\"excludedAttributes\");\r",
+							"        pm.expect(pm.response.text()).to.not.include(excludedAttributes);\r",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ba7a7ced-e54a-410d-a1fe-d4309ebe27f9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}:{{port}}/api/v1/Vessels('{{vessel}}')/Tags"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{Password}}",
+			"username": "{{User}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3c32bcb9-64d6-4462-bddc-74609f601d40",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4a1e9b91-caf2-4c73-b71a-5035db1d72b9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
