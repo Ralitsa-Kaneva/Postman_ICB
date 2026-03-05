@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "4e071a44-cac8-4081-82f7-c8b0c2b88766",
+		"name": "Events Service",
+		"description": "Test active alarms controller with valid authorization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Active Alarms",
+			"id": "be6b69d7-ae55-4424-9f98-04b0dabc6080",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.166.246:11000/EventsService/api/active-alarms?from=2016-10-1&to=2016-10-2&sourceName=AIM",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"166",
+						"246"
+					],
+					"port": "11000",
+					"path": [
+						"EventsService",
+						"api",
+						"active-alarms"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2016-10-1"
+						},
+						{
+							"key": "to",
+							"value": "2016-10-2"
+						},
+						{
+							"key": "sourceName",
+							"value": "AIM"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "29dd3f61-9ed4-4015-a419-2b24b0df35a4",
+					"name": "Active Alarms",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.166.246:11000/EventsService/api/active-alarms?from=2016-10-1&to=2016-10-2&sourceName=AIM",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"166",
+								"246"
+							],
+							"port": "11000",
+							"path": [
+								"EventsService",
+								"api",
+								"active-alarms"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2016-10-1"
+								},
+								{
+									"key": "to",
+									"value": "2016-10-2"
+								},
+								{
+									"key": "sourceName",
+									"value": "AIM"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 22 Apr 2020 14:54:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Authorization has been denied for this request.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Counts",
+			"id": "5093aaa9-6b59-4bb2-980d-1b2f0119c3fd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSIsImtpZCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNjYuMjQ2L1NlY3VyaXR5L2F1dGgiLCJhdWQiOiJodHRwOi8vMTkyLjE2OC4xNjYuMjQ2L1NlY3VyaXR5L2F1dGgvcmVzb3VyY2VzIiwiZXhwIjoxNTg3NTY3NjkxLCJuYmYiOjE1ODc1NjcwOTEsImNsaWVudF9pZCI6InBvc2VpZG9uIiwic2NvcGUiOlsib3BlbmlkIiwicHJvZmlsZSIsInBvc2VpZG9uYmFja2VuZCJdLCJzdWIiOiJiYTNmYWFhNy02YzE4LTQ0NGUtYmRiYi0yNDdhZWYyZGEwOGEiLCJhdXRoX3RpbWUiOjE1ODc1NTMxNDMsImlkcCI6Imlkc3J2IiwicG9zZWlkb25iYWNrZW5kIjoicG9zZWlkb25iYWNrZW5kIiwibmFtZSI6ImFkbWluIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJhbXIiOlsicGFzc3dvcmQiXX0.v7gN7IOIIm2EJkIfF53gAiIaTD17D2hEgcl4rKuYxteX4QDT6qo-hhk5_Fx8Hta2_kDig7GKAQ-aRQW3Q8IO105P_JzGy43Xw4GpL7ViKqNzqsuAPK4resqu0wqZHdbUcPTZCYf5Vy2YQO4GbuMENICvm4XF7CNn-rU-cs4wOmv_cv5SFeO3Jer4tbG2-V-kf7xKPiiI7uNDKDeSftS3Q6LkjeW2SUe_KMZQADaLVZtqoGSt5hoRXBu4lbhWyxMQb9qNUoWGvvLd_adSnEJgQ7dS_CWRCwfm3Vofs426sYUYLkwJKWI6FLzOzUBC_92QCL8CLq_bGWkLCrLsPsOCVw"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.166.246:11000/EventsService/api/counts/grouped-events?from=2016-10-1&to=2016-10-2",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"166",
+						"246"
+					],
+					"port": "11000",
+					"path": [
+						"EventsService",
+						"api",
+						"counts",
+						"grouped-events"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2016-10-1"
+						},
+						{
+							"key": "to",
+							"value": "2016-10-2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Events",
+			"id": "4c7aac05-c8e3-48ef-bdbc-f974097b5c74",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Grouping",
+			"id": "47965bc5-3ffd-4f87-a4fc-98d1b6dcba63",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "MetaData",
+			"id": "2246eae0-62cf-4731-ba52-62111a96a100",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSIsImtpZCI6ImEtNzBKS3hHeWR3TWFhdjNGV0ZtRnZBN3lsSSJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNjYuMjQ2L1NlY3VyaXR5L2F1dGgiLCJhdWQiOiJodHRwOi8vMTkyLjE2OC4xNjYuMjQ2L1NlY3VyaXR5L2F1dGgvcmVzb3VyY2VzIiwiZXhwIjoxNTg3NTY3MTUwLCJuYmYiOjE1ODc1NjY1NTAsImNsaWVudF9pZCI6InBvc2VpZG9uIiwic2NvcGUiOlsib3BlbmlkIiwicHJvZmlsZSIsInBvc2VpZG9uYmFja2VuZCJdLCJzdWIiOiJiYTNmYWFhNy02YzE4LTQ0NGUtYmRiYi0yNDdhZWYyZGEwOGEiLCJhdXRoX3RpbWUiOjE1ODc1NTMxNDMsImlkcCI6Imlkc3J2IiwicG9zZWlkb25iYWNrZW5kIjoicG9zZWlkb25iYWNrZW5kIiwibmFtZSI6ImFkbWluIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJhbXIiOlsicGFzc3dvcmQiXX0.TIGJ1p0NVEiU78T6WcJfHlqVBbWJBqnTN7ynRUzoljQK5falyNL_W72Eoh-KOECfvhomlN7mdBCE8-q3vePVNJh2SQ169eNFEgSvFJpPQYF60zUtcpOmGYhIDGwwVADa6L3HINQUxKrAPu4_NuT1EEdX3NQkepl9Iq7dNANicE0rIZen17gHku-C6GPVJev_tyoW4599ceCvPp1Fbr-wFqar9UhcrhJAp0QN_kCJ0geeOfeC2c3936urK3rM-krelSBmq6TaLOGoQAf0Ace3q34SY4JrvXabCkhxXPK3v57m85YszL6IR-jTc8W5sQ57NvTRO2rgCQ4Q0b5uPYgaRQ"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ed3d8c0c-b03a-4c3f-81db-ce5296ddedcd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b98c4d6c-1d7c-4d00-8e34-98787f67517c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
