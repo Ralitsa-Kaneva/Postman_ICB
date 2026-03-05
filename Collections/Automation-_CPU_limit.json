@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "27cddd2c-fee2-4c6f-a0b0-51a1ea9624fb",
+		"name": "Automation: CPU limit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[A]194381: K-IMS API: Send request in a REST client while the CPU is above the configured load limit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "58f14891-2a8d-4b37-b935-5d4d94c5751a",
+						"exec": [
+							"//Tests\r",
+							"\r",
+							"pm.test(\"Status code is 429 Too many requests\", function () {\r",
+							"    pm.response.to.have.status(429);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check for correct error message\", function () {\r",
+							"    pm.response.to.have.body(\"Server is occupied at the moment, please try again later.\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b1ebeeb3-aedf-4eb4-a299-d51b0de59166",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Vessels",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Vessels"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "Tags",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{Password}}",
+			"username": "{{User}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3c32bcb9-64d6-4462-bddc-74609f601d40",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4a1e9b91-caf2-4c73-b71a-5035db1d72b9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
