@@ -1,0 +1,588 @@
+{
+	"info": {
+		"_postman_id": "470f167a-7b4d-461e-a7cf-3d66910023fd",
+		"name": "EventsController Introduction configured for v 1.6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/EventTypes",
+			"id": "41adbe73-e8c3-49ae-8db0-97dbc68d0c22",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}:{{port}}/api/v1/Events/EventTypes",
+				"description": "Gets collection of all Event Types. The result is not vessel related."
+			},
+			"response": []
+		},
+		{
+			"name": "/Systems",
+			"id": "99e8879d-f3fe-4b89-bc67-923b0e9460c5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}:{{port}}/api/v1/Events/Systems",
+				"description": "Gets collection of all Systems (Event Sources). The result is not vessel related."
+			},
+			"response": []
+		},
+		{
+			"name": "/SuppressionStates",
+			"id": "78eff735-762b-4460-9fed-dd38c8405f53",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}:{{port}}/api/v1/Events/SuppressionStates",
+				"description": "Gets collection of all Suppression States (hard coded enumeration)"
+			},
+			"response": []
+		},
+		{
+			"name": "/Vessel('VesselB')/Stations",
+			"id": "db5e0e74-7186-41ea-9e65-1a201dfce065",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}:{{port}}/api/v1/Events/Vessel('Vessel_RaliTest_Renamed')/Stations",
+				"description": "Gets collection of all Vessel Stations."
+			},
+			"response": []
+		},
+		{
+			"name": "/Priorities",
+			"id": "2cb53387-9de0-49fb-a48a-b37691e1f2fc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}:{{port}}/api/v1/Events/Priorities",
+				"description": "Gets collection of all System Priorities. The result is not vessel related."
+			},
+			"response": []
+		},
+		{
+			"name": "/Vessels",
+			"id": "741fa1ec-a3ca-47cb-a294-db6b7530b3d8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}:{{port}}/api/v1/Events/Vessels",
+				"description": "Gets collection of all Vessels."
+			},
+			"response": []
+		},
+		{
+			"name": "&System=!DP&Priority=3,5&EventType=1&EventText=!Something happened: 12",
+			"id": "cb89a97f-3d80-4b52-83f0-cb7ca69fc950",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Events/Vessel('vessela')/Search?From=2022-11-25T00:00:00Z&To=2022-11-27T00:00:00Z",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Events",
+						"Vessel('vessela')",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": "2022-11-25T00:00:00Z"
+						},
+						{
+							"key": "To",
+							"value": "2022-11-27T00:00:00Z"
+						}
+					]
+				},
+				"description": "Events search. Complex filter criteria."
+			},
+			"response": []
+		},
+		{
+			"name": "&MaxReturnRows=2",
+			"id": "15a0c2b0-5ed2-4077-bb95-2dd0e9f02647",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Events/Vessel('vessela')/Search?From=2021-08-02T10:00:00.000Z&To=2021-08-04T23:00:00.000Z&MaxReturnRows=2",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Events",
+						"Vessel('vessela')",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": "2021-08-02T10:00:00.000Z"
+						},
+						{
+							"key": "To",
+							"value": "2021-08-04T23:00:00.000Z"
+						},
+						{
+							"key": "MaxReturnRows",
+							"value": "2"
+						}
+					]
+				},
+				"description": "Events search. MaxReturnRows usage."
+			},
+			"response": []
+		},
+		{
+			"name": "&System=!DP",
+			"id": "de60a980-3c98-42f2-941f-76c7e6a34cee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Events/Vessel('vessela')/Search?From=2021-11-16T22:00:00.000Z&To=2021-11-16T23:00:00.000Z&System=!DP",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Events",
+						"Vessel('vessela')",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": "2021-11-16T22:00:00.000Z"
+						},
+						{
+							"key": "To",
+							"value": "2021-11-16T23:00:00.000Z"
+						},
+						{
+							"key": "System",
+							"value": "!DP"
+						}
+					]
+				},
+				"description": "Events search. System filter criteria. Supports \"!\" (NotEqual predicate)."
+			},
+			"response": []
+		},
+		{
+			"name": "&Station=SomeStation",
+			"id": "f3deb95b-98c5-4fba-8d9f-740667d935c1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Events/Vessel('kims api')/Search?From=2021-06-16T22:00:00.000Z&To=2021-08-16T23:00:00.000Z&Station=Stationx1",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Events",
+						"Vessel('kims api')",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": "2021-06-16T22:00:00.000Z"
+						},
+						{
+							"key": "To",
+							"value": "2021-08-16T23:00:00.000Z"
+						},
+						{
+							"key": "Station",
+							"value": "Stationx1"
+						}
+					]
+				},
+				"description": "Events search. Station filter criteria."
+			},
+			"response": []
+		},
+		{
+			"name": "&Module=SomeModule",
+			"id": "42d45c73-5132-4162-84e7-6e78676c1618",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Events/Vessel('Rali_PB_Vessel')/Search?From=2020-11-16T22:00:00.000Z&To=2020-11-16T23:00:00.000Z&Module=SomeModule",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Events",
+						"Vessel('Rali_PB_Vessel')",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": "2020-11-16T22:00:00.000Z"
+						},
+						{
+							"key": "To",
+							"value": "2020-11-16T23:00:00.000Z"
+						},
+						{
+							"key": "Module",
+							"value": "SomeModule"
+						}
+					]
+				},
+				"description": "Events search. Module filter criteria."
+			},
+			"response": []
+		},
+		{
+			"name": "&SubSystem=SomeSubSystem",
+			"id": "bef455da-4963-4edf-8b30-a6c41f6682d4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Events/Vessel('Rali_PB_Vessel')/Search?From=2020-11-16T22:00:00.000Z&To=2020-11-16T23:00:00.000Z&SubSystem=SomeSubSystem",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Events",
+						"Vessel('Rali_PB_Vessel')",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": "2020-11-16T22:00:00.000Z"
+						},
+						{
+							"key": "To",
+							"value": "2020-11-16T23:00:00.000Z"
+						},
+						{
+							"key": "SubSystem",
+							"value": "SomeSubSystem"
+						}
+					]
+				},
+				"description": "Events search. SubSystem filter criteria."
+			},
+			"response": []
+		},
+		{
+			"name": "&Description=SomeDescription",
+			"id": "78a425b8-54cf-45c5-87c2-1b87243f2237",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Events/Vessel('Rali_PB_Vessel')/Search?From=2020-11-16T22:00:00.000Z&To=2020-11-16T23:00:00.000Z&Description=SomeDescription",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Events",
+						"Vessel('Rali_PB_Vessel')",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": "2020-11-16T22:00:00.000Z"
+						},
+						{
+							"key": "To",
+							"value": "2020-11-16T23:00:00.000Z"
+						},
+						{
+							"key": "Description",
+							"value": "SomeDescription"
+						}
+					]
+				},
+				"description": "Events search. Description filter criteria."
+			},
+			"response": []
+		},
+		{
+			"name": "&Suppression=HideSuppressed",
+			"id": "51622b1f-4267-4b0b-8cf1-7eb47b83810e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Events/Vessel('Rali_PB_Vessel')/Search?From=2020-11-16T22:00:00.000Z&To=2020-11-16T23:00:00.000Z&Suppression=HideSuppressed",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Events",
+						"Vessel('Rali_PB_Vessel')",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": "2020-11-16T22:00:00.000Z"
+						},
+						{
+							"key": "To",
+							"value": "2020-11-16T23:00:00.000Z"
+						},
+						{
+							"key": "Suppression",
+							"value": "HideSuppressed"
+						}
+					]
+				},
+				"description": "Events search. Suppression filter criteria."
+			},
+			"response": []
+		},
+		{
+			"name": "&EventText=!Something happened: 12",
+			"id": "8138e928-bc89-4951-8b06-c840084dabd4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Events/Vessel('Rali_PB_Vessel')/Search?From=2020-11-16T22:00:00.000Z&To=2020-11-16T23:00:00.000Z&EventText=!Something happened: 12",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Events",
+						"Vessel('Rali_PB_Vessel')",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": "2020-11-16T22:00:00.000Z"
+						},
+						{
+							"key": "To",
+							"value": "2020-11-16T23:00:00.000Z"
+						},
+						{
+							"key": "EventText",
+							"value": "!Something happened: 12"
+						}
+					]
+				},
+				"description": "Events search. EventText filter criteria.Supports \"!\" (NotEqual predicate)."
+			},
+			"response": []
+		},
+		{
+			"name": "&EventType=!3",
+			"id": "50671b0c-0175-44e9-b52f-071373c19d56",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Events/Vessel('Rali_PB_Vessel')/Search?From=2020-11-16T22:00:00.000Z&To=2020-11-16T23:00:00.000Z&EventType=!3",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Events",
+						"Vessel('Rali_PB_Vessel')",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": "2020-11-16T22:00:00.000Z"
+						},
+						{
+							"key": "To",
+							"value": "2020-11-16T23:00:00.000Z"
+						},
+						{
+							"key": "EventType",
+							"value": "!3"
+						}
+					]
+				},
+				"description": "Events search. EventType filter criteria.Supports \"!\" (NotEqual predicate)."
+			},
+			"response": []
+		},
+		{
+			"name": "&Priority=3,5",
+			"id": "462b23a6-7a32-4ba9-9274-1325609d8288",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "api",
+						"password": "123"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Events/Vessel('Rali_PB_Vessel')/Search?From=2020-11-16T22:00:00.000Z&To=2020-11-16T23:00:00.000Z&Priority=3,5",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Events",
+						"Vessel('Rali_PB_Vessel')",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "From",
+							"value": "2020-11-16T22:00:00.000Z"
+						},
+						{
+							"key": "To",
+							"value": "2020-11-16T23:00:00.000Z"
+						},
+						{
+							"key": "Priority",
+							"value": "3,5"
+						}
+					]
+				},
+				"description": "Events search. Priority filter criteria."
+			},
+			"response": []
+		},
+		{
+			"name": "https://192.168.166.139/routing/platform/ExportDataService/api/TimeSeries/ExcelSubscription",
+			"id": "de5f46eb-5ca2-48be-b9ec-e268f3524e4a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"username": "{{ApiUser}}",
+			"password": "{{Password}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5c006468-e847-4ba6-afba-2bcd4b19c367",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "97f79a9a-8b3a-4a00-81c3-56201046ef8a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
