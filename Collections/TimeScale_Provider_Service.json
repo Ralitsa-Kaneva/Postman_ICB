@@ -1157,7 +1157,8 @@
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -1179,7 +1180,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"description\": \"time service provider test\",  \r\n   \"engUnit\": \"m\",  \r\n   \"commandoGroup\": \"\",  \r\n   \"tagName\": \"TPS_test_noType\",  \r\n   \"schema\": \"kims\",  \r\n   \"tagType\": \"NoType\"  \r\n }\r\n\r\n\r\n",
+							"raw": "{  \r\n   \"tagName\": \"Reg_5.33_Kims_noType\",  \r\n   \"description\": \"timescale service provider test 5.33\",  \r\n   \"engUnit\": \"m\",  \r\n   \"commandoGroup\": \"Regression 5.33\",  \r\n   \"schema\": \"Kims\",  \r\n   \"tagType\": \"NoType\"  \r\n }\r\n\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1211,7 +1212,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"time service provider test\",\r\n    \"engUnit\": \"kwh\",\r\n    \"commandoGroup\": \"Bool\",\r\n    \"tagName\": \"TPS_test_Bool\",\r\n    \"schema\": \"kims\",\r\n    \"tagType\": \"Bool\"\r\n}",
+							"raw": "{\r\n   \"tagName\": \"Reg_5.33_Kims_Bool\",  \r\n   \"description\": \"timescale service provider test 5.33\",  \r\n   \"engUnit\": \"kwh\",  \r\n   \"commandoGroup\": \"Regression 5.33\",  \r\n   \"schema\": \"Kims\",  \r\n    \"tagType\": \"Bool\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1236,7 +1237,8 @@
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -1258,7 +1260,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"description\": \"time service provider test\",  \r\n   \"engUnit\": \"m\",  \r\n   \"commandoGroup\": \"\",  \r\n   \"tagName\": \"TPS_test_Sbyte\",  \r\n   \"schema\": \"kims\",  \r\n   \"tagType\": \"Sbyte\"  \r\n }",
+							"raw": "{  \r\n   \"tagName\": \"Reg_5.33_Kims_Sbyte\",  \r\n   \"description\": \"timescale service provider test 5.33\",  \r\n   \"engUnit\": \"kwh\",  \r\n   \"commandoGroup\": \"Regression 5.33\",  \r\n   \"schema\": \"Kims\",  \r\n   \"tagType\": \"Sbyte\"  \r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1283,7 +1285,8 @@
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -1305,7 +1308,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"description\": \"time service provider test\",  \r\n   \"engUnit\": \"kwh\",  \r\n   \"commandoGroup\": \"Byte\",  \r\n   \"tagName\": \"TPS_test_Byte\",  \r\n   \"schema\": \"kims\",  \r\n   \"tagType\": \"Byte\"  \r\n }",
+							"raw": "{  \r\n   \"tagName\": \"Reg_5.33_Kims_Byte\",  \r\n   \"description\": \"timescale service provider test 5.33\",  \r\n   \"engUnit\": \"kwh\",  \r\n   \"commandoGroup\": \"Regression 5.33\",  \r\n   \"schema\": \"Kims\",  \r\n   \"tagType\": \"Byte\"  \r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
