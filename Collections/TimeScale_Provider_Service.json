@@ -1669,7 +1669,8 @@
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -1691,7 +1692,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"description\": \"time service provider test\",  \r\n   \"engUnit\": \"kwh\",  \r\n   \"commandoGroup\": \"DateTime\",  \r\n   \"tagName\": \"TPS_test_DateTime\",  \r\n   \"schema\": \"kims\",  \r\n   \"tagType\": \"DateTime\"  \r\n }",
+							"raw": "{  \r\n   \"tagName\": \"Reg_5.33_Kims_DateTime\",  \r\n   \"description\": \"timescale service provider test 5.33\",  \r\n   \"engUnit\": \"\",  \r\n   \"commandoGroup\": \"Regression 5.33\",  \r\n   \"schema\": \"Kims\",   \r\n   \"tagType\": \"DateTime\"  \r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1716,7 +1717,8 @@
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -1738,7 +1740,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"description\": \"time service provider test\",  \r\n   \"engUnit\": \"kwh\",  \r\n   \"commandoGroup\": \"Text\",  \r\n   \"tagName\": \"TPS_test_Text\",  \r\n   \"schema\": \"kims\",  \r\n   \"tagType\": \"Text\"  \r\n }",
+							"raw": "{  \r\n   \"tagName\": \"Reg_5.33_Kims_Text\",  \r\n   \"description\": \"timescale service provider test 5.33\",  \r\n   \"engUnit\": \"\",  \r\n   \"commandoGroup\": \"Regression 5.33\",  \r\n   \"schema\": \"Kims\",   \r\n   \"tagType\": \"Text\"  \r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
