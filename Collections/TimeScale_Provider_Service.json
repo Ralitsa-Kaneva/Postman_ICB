@@ -2544,10 +2544,18 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
-									"});"
+									"});\r",
+									"\r",
+									"\r",
+									"// Count result\r",
+									"let json = pm.response.json();\r",
+									"const count = Array.isArray(json.tags) ? json.tags.length : 0;\r",
+									"\r",
+									"console.log(`tags count: ${count}`);   // -> tags count: 18"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
