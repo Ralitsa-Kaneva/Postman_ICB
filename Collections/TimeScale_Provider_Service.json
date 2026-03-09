@@ -2955,6 +2955,7 @@
 								"id": "01f09987-bfb0-4f01-beec-098f3fb0027f",
 								"exec": [
 									"pm.collectionVariables.set(\"tagName\", [\r",
+									"\"tag_Analysis Rali_PE\",\r",
 									"\"Text timescale tag with multiple values\",\r",
 									"\"Bool timescale tag with multiple values\",\r",
 									"\"Byte timescale tag with multiple values\",\r",
@@ -3017,14 +3018,37 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"name\": \"{{currentTagName}}\",\r\n   \"schema\": \"Kims\"  \r\n }",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{baseURL}}/TimescaleProviderService/api/values/last",
+						"url": {
+							"raw": "{{baseURL}}/TimescaleProviderService/api/values/last?name={{currentTagName}}&schema=Kims",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"TimescaleProviderService",
+								"api",
+								"values",
+								"last"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "{{currentTagName}}",
+									"type": "text"
+								},
+								{
+									"key": "schema",
+									"value": "Kims",
+									"type": "text"
+								}
+							]
+						},
 						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"name\": \"string\",  \r\n   \"schema\": \"string\"  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/last'"
 					},
 					"response": []
