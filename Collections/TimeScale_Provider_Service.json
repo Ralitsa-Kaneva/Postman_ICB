@@ -3293,7 +3293,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"interpolated\": true,  \r\n   \"from\": \"2026-03-09T13:47:21.805Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"Reg_5.33_Kims\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Reg_5.33_Kims_noType\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Reg_5.33_Kims_Bool\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Reg_5.33_Kims_Byte\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Reg_5.33_Kims_Int32\",  \r\n       \"schema\": \"Kims\"  \r\n     }, {  \r\n       \"name\": \"Reg_5.33_Kims_DateTime\",  \r\n       \"schema\": \"Kims\"  \r\n     }\r\n   ]  \r\n}",
+							"raw": "{  \r\n   \"interpolated\": true,  \r\n   \"from\": \"2026-03-09T15:47:21.805Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"Reg_5.33_Kims\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Reg_5.33_Kims_noType\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Reg_5.33_Kims_Bool\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Reg_5.33_Kims_Byte\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Reg_5.33_Kims_Int32\",  \r\n       \"schema\": \"Kims\"  \r\n     }, {  \r\n       \"name\": \"Reg_5.33_Kims_DateTime\",  \r\n       \"schema\": \"Kims\"  \r\n     }\r\n   ]  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3351,7 +3351,8 @@
 									""
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						},
 						{
@@ -3362,7 +3363,8 @@
 									"//Test that the returned values is the interpolated value between the previous and next value"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -3384,7 +3386,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"interpolated\": true,  \r\n   \"from\": \"2025-04-29T09:08:09.40Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"Text timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Bool timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Byte timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Int32 timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Float timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     }, {  \r\n       \"name\": \"Double timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     }, {  \r\n       \"name\": \"DateTime timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     }\r\n   ]  \r\n}",
+							"raw": "{  \r\n   \"interpolated\": true,  \r\n   \"from\": \"2026-03-09T15:00:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"Reg_5.33_Kims\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Reg_5.33_Kims_noType\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Reg_5.33_Kims_Bool\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Reg_5.33_Kims_Byte\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Reg_5.33_Kims_Int32\",  \r\n       \"schema\": \"Kims\"  \r\n     }, {  \r\n       \"name\": \"Reg_5.33_Kims_DateTime\",  \r\n       \"schema\": \"Kims\"  \r\n     }\r\n   ]  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3442,7 +3444,8 @@
 									""
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						},
 						{
@@ -3453,7 +3456,8 @@
 									"// Test 1: Validate that the closest previous recorded value is returned"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -3475,7 +3479,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"interpolated\": false,  \r\n   \"from\": \"2025-04-30T13:47:21.805Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"Text timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Bool timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Byte timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Int32 timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Float timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     }, {  \r\n       \"name\": \"Double timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     }, {  \r\n       \"name\": \"DateTime timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     }\r\n   ]  \r\n}",
+							"raw": "{  \r\n   \"interpolated\": false,  \r\n   \"from\": \"2026-03-09T15:00:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"Reg_5.33_Kims\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Reg_5.33_Kims_noType\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Reg_5.33_Kims_Bool\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Reg_5.33_Kims_Byte\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Reg_5.33_Kims_Int32\",  \r\n       \"schema\": \"Kims\"  \r\n     }, {  \r\n       \"name\": \"Reg_5.33_Kims_DateTime\",  \r\n       \"schema\": \"Kims\"  \r\n     }\r\n   ]  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
