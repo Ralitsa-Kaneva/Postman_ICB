@@ -825,6 +825,89 @@
 								"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"start\": \"2025-02-21T13:47:21.811Z\",  \n\"end\": \"2025-02-21T13:47:21.811Z\",  \n\"tagName\": \"string\",  \n\"values\": \\[  \n{  \n\"quality\": \"string\",  \n\"time\": \"2025-02-21T13:47:21.811Z\",  \n\"value\": {}  \n}  \n\\]  \n}' '[http://192.168.166.14:11000/TimescaleProviderService/api/values/replace'](http://192.168.166.14:11000/TimescaleProviderService/api/values/replace')\n\n..................04.12.2025\n\nThe test case is closed according to [#688866](https://kognifai.visualstudio.com/Kongsberg%20Maritime/_workitems/edit/688866/)  \nNew test case is created 693413\n\n.................."
 							},
 							"response": []
+						},
+						{
+							"name": "629275. Run /api/values/last for tags with multiple values",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "01f09987-bfb0-4f01-beec-098f3fb0027f",
+										"exec": [
+											"pm.collectionVariables.set(\"tagName\", [\r",
+											"\"Text timescale tag with multiple values\",\r",
+											"\"Bool timescale tag with multiple values\",\r",
+											"\"Byte timescale tag with multiple values\",\r",
+											"\"Int32 timescale tag with multiple values\",\r",
+											"\"Float timescale tag with multiple values\",\r",
+											"\"Double timescale tag with multiple values\",\r",
+											"\"DateTime timescale tag with multiple values\"\r",
+											"]);\r",
+											"\r",
+											"tags = pm.collectionVariables.get(\"tagName\")\r",
+											"counter = pm.collectionVariables.get(\"counter\");\r",
+											"currentTagName = pm.collectionVariables.get(\"tagName\")[counter];\r",
+											"counter++;\r",
+											"if (counter >= tags.length) {\r",
+											"    counter = 0;\r",
+											"    console.log(\"The next tag is the last one\");\r",
+											"} \r",
+											"\r",
+											"pm.collectionVariables.set(\"counter\", counter)\r",
+											"pm.collectionVariables.set(\"currentTagName\", currentTagName)\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "57951a9b-f5de-4949-9f23-8ae58963bf9e",
+										"exec": [
+											"console.log(currentTagName)\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "6a907d31-3634-45c5-a55c-089a49466401",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \r\n   \"name\": \"{{currentTagName}}\",\r\n   \"schema\": \"Kims\"  \r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/TimescaleProviderService/api/values/last",
+								"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"name\": \"string\",  \r\n   \"schema\": \"string\"  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/last'"
+							},
+							"response": []
 						}
 					],
 					"id": "f662f336-a492-4f69-8751-d1a61b10c6b4"
@@ -2864,90 +2947,7 @@
 					"response": []
 				},
 				{
-					"name": "629275. Run /api/values/last for tags with multiple values",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "01f09987-bfb0-4f01-beec-098f3fb0027f",
-								"exec": [
-									"pm.collectionVariables.set(\"tagName\", [\r",
-									"\"Text timescale tag with multiple values\",\r",
-									"\"Bool timescale tag with multiple values\",\r",
-									"\"Byte timescale tag with multiple values\",\r",
-									"\"Int32 timescale tag with multiple values\",\r",
-									"\"Float timescale tag with multiple values\",\r",
-									"\"Double timescale tag with multiple values\",\r",
-									"\"DateTime timescale tag with multiple values\"\r",
-									"]);\r",
-									"\r",
-									"tags = pm.collectionVariables.get(\"tagName\")\r",
-									"counter = pm.collectionVariables.get(\"counter\");\r",
-									"currentTagName = pm.collectionVariables.get(\"tagName\")[counter];\r",
-									"counter++;\r",
-									"if (counter >= tags.length) {\r",
-									"    counter = 0;\r",
-									"    console.log(\"The next tag is the last one\");\r",
-									"} \r",
-									"\r",
-									"pm.collectionVariables.set(\"counter\", counter)\r",
-									"pm.collectionVariables.set(\"currentTagName\", currentTagName)\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "57951a9b-f5de-4949-9f23-8ae58963bf9e",
-								"exec": [
-									"console.log(currentTagName)\r",
-									"\r",
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"id": "6a907d31-3634-45c5-a55c-089a49466401",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{  \r\n   \"name\": \"{{currentTagName}}\",\r\n   \"schema\": \"Kims\"  \r\n }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}/TimescaleProviderService/api/values/last",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"name\": \"string\",  \r\n   \"schema\": \"string\"  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/last'"
-					},
-					"response": []
-				},
-				{
-					"name": "Run /api/values/last for tags with multiple values",
+					"name": "725728. Run /api/values/last for tags with multiple values",
 					"event": [
 						{
 							"listen": "prerequest",
