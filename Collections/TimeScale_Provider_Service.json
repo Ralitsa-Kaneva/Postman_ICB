@@ -4384,7 +4384,8 @@
 									"//One value after the requested period is retunred"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -4406,7 +4407,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"boundaryType\": \"InterpolatedLinear\",  \r\n   \"to\": \"2025-05-05T04:17:00Z\",  \r\n   \"from\": \"2025-05-05T02:17:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"1\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
+							"raw": "{  \r\n   \"boundaryType\": \"InterpolatedLinear\",  \r\n   \"to\": \"2025-05-05T04:17:00Z\",  \r\n   \"from\": \"2025-05-05T02:17:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"{{tag}}\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
