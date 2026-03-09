@@ -2577,7 +2577,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"filters\": [  \r\n     {  \r\n       \"type\": \"Description\",  \r\n       \"value\": \"double\"  \r\n     },\r\n          {  \r\n       \"type\": \"UnitOfMeasure\",  \r\n       \"value\": \"double\"  \r\n     },\r\n          {  \r\n       \"type\": \"TagName\",  \r\n       \"value\": \"double\"  \r\n     },\r\n          {  \r\n       \"type\": \"TagType\",  \r\n       \"value\": \"double\"  \r\n     },\r\n          {  \r\n       \"type\": \"CommandoGroup\",  \r\n       \"value\": \"double\"  \r\n     }\r\n   ],  \r\n   \"count\": 100,  \r\n   \"schema\": 1,  \r\n   \"orFiltersLogicalOperator\": false  \r\n }",
+							"raw": "{  \r\n   \"filters\": [  \r\n     {  \r\n       \"type\": \"Description\",  \r\n       \"value\": \"timescale service provider test 5.33\"  \r\n     },\r\n          {  \r\n       \"type\": \"UnitOfMeasure\",  \r\n       \"value\": \"kwh\"  \r\n     },\r\n          {  \r\n       \"type\": \"TagName\",  \r\n       \"value\": \"Reg_5.33_Kims\"  \r\n     },\r\n          {  \r\n       \"type\": \"TagType\",  \r\n       \"value\": \"double\"  \r\n     },\r\n          {  \r\n       \"type\": \"CommandoGroup\",  \r\n       \"value\": \"regression*\"  \r\n     }\r\n   ],  \r\n   \"count\": 100,  \r\n   \"schema\": 1,  \r\n   \"orFiltersLogicalOperator\": false  \r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
