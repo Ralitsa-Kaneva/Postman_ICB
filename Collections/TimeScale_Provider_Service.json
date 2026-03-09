@@ -3258,7 +3258,8 @@
 									""
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						},
 						{
@@ -3269,7 +3270,8 @@
 									"// Test 1: Validate that the last recorded value is returned for all data types"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -3291,7 +3293,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"interpolated\": true,  \r\n   \"from\": \"2025-04-30T13:47:21.805Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"Text timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Bool timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Byte timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Int32 timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Float timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     }, {  \r\n       \"name\": \"Double timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     }, {  \r\n       \"name\": \"DateTime timescale tag with multiple values\",  \r\n       \"schema\": \"Kims\"  \r\n     }\r\n   ]  \r\n}",
+							"raw": "{  \r\n   \"interpolated\": true,  \r\n   \"from\": \"2026-03-09T13:47:21.805Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"Reg_5.33_Kims\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Reg_5.33_Kims_noType\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Reg_5.33_Kims_Bool\",  \r\n       \"schema\": \"Kims\"  \r\n     },      {  \r\n       \"name\": \"Reg_5.33_Kims_Byte\",  \r\n       \"schema\": \"Kims\"  \r\n     },     {  \r\n       \"name\": \"Reg_5.33_Kims_Int32\",  \r\n       \"schema\": \"Kims\"  \r\n     }, {  \r\n       \"name\": \"Reg_5.33_Kims_DateTime\",  \r\n       \"schema\": \"Kims\"  \r\n     }\r\n   ]  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
