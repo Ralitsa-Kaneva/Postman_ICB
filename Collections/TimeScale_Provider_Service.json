@@ -1992,20 +1992,29 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "59e9577b-4877-4cc6-86c0-70bd218d5fe8",
+								"id": "f38e0aac-1f5a-4886-8028-8e820a6c5c6a",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"All returned results have an empty string for the description property\", function () {\r",
+									"//Not applicable for current Timescale\r",
+									"/*pm.test(\"All returned results have an empty string for the description property\", function () {\r",
 									"  pm.response.json().tags.forEach(function(tag) {\r",
 									"    pm.expect(tag.description).to.eql(\"\");\r",
 									"  });\r",
-									"});"
+									"});*/\r",
+									"\r",
+									"// Count result\r",
+									"let json = pm.response.json();\r",
+									"const count = Array.isArray(json.tags) ? json.tags.length : 0;\r",
+									"\r",
+									"console.log(`tags count: ${count}`);   // -> tags count: 18\r",
+									""
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -2522,7 +2531,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"filters\": [  \r\n     {  \r\n       \"type\": \"Description\",  \r\n       \"value\": \"*\"  \r\n     },\r\n          {  \r\n       \"type\": \"UnitOfMeasure\",  \r\n       \"value\": \"*\"  \r\n     },\r\n          {  \r\n       \"type\": \"TagName\",  \r\n       \"value\": \"*\"  \r\n     },\r\n          {  \r\n       \"type\": \"TagType\",  \r\n       \"value\": \"*\"  \r\n     },\r\n          {  \r\n       \"type\": \"CommandoGroup\",  \r\n       \"value\": \"*\"  \r\n     }\r\n   ],  \r\n   \"count\": 100,  \r\n   \"schema\": 1,  \r\n   \"orFiltersLogicalOperator\": false  \r\n }",
+							"raw": "{  \r\n   \"filters\": [  \r\n     {  \r\n       \"type\": \"Description\",  \r\n       \"value\": \"*\"  \r\n     },\r\n          {  \r\n       \"type\": \"UnitOfMeasure\",  \r\n       \"value\": \"*\"  \r\n     },\r\n          {  \r\n       \"type\": \"TagName\",  \r\n       \"value\": \"*\"  \r\n     },\r\n          {  \r\n       \"type\": \"TagType\",  \r\n       \"value\": \"*\"  \r\n     },\r\n          {  \r\n       \"type\": \"CommandoGroup\",  \r\n       \"value\": \"*\"  \r\n     }\r\n   ],  \r\n   \"count\": 100,  \r\n   \"schema\": 1,  \r\n   \"orFiltersLogicalOperator\": true  \r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
