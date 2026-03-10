@@ -4134,149 +4134,7 @@
 					"response": []
 				},
 				{
-					"name": "630730. Recorded values inside given period with values for the given boundaries /api/values/recorded",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "5c308450-73eb-459f-ad02-29c175312229",
-								"exec": [
-									"//Status code 200\r",
-									"//Values inside the given period are returned\r",
-									"//Values for the boundaries are returned"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "8171692f-64d7-447d-9b8d-5f68844df020",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{  \r\n   \"boundaryType\": \"Inside\",  \r\n   \"to\": \"2025-05-05T04:15:00Z\",  \r\n   \"from\": \"2025-05-05T02:10:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"1\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}/TimescaleProviderService/api/values/recorded",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"boundaryType\": \"string\",  \r\n   \"to\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/recorded'"
-					},
-					"response": []
-				},
-				{
-					"name": "630743. Recorded values outside given period with values for the given boundaries /api/values/recorded",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "5c308450-73eb-459f-ad02-29c175312229",
-								"exec": [
-									"//Status code 200\r",
-									"//Values inside the given period are returned\r",
-									"//Values for the boundaries are returned\r",
-									"// Values before and after the boundaries are returned"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"id": "fdf609f4-25e4-45f6-a6c4-995f4c06a8b5",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{  \r\n   \"boundaryType\": \"Outside\",  \r\n   \"to\": \"2026-03-09T14:41:21.465961Z\",  \r\n   \"from\": \"2025-05-05T02:07:00Z\", \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"1\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}/TimescaleProviderService/api/values/recorded",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"boundaryType\": \"string\",  \r\n   \"to\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/recorded'"
-					},
-					"response": []
-				},
-				{
-					"name": "630746. Recorded values inside given period without values for the given boundaries /api/values/recorded",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "7b6a3531-1086-423d-bcfc-28a11998dee2",
-								"exec": [
-									"//Status code is 200\r",
-									"//Only values inside the requested period are returned"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "ad586dbd-31e8-499c-abd3-b9fbfd69a2be",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{  \r\n   \"boundaryType\": \"Inside\",  \r\n   \"to\": \"2025-05-05T04:17:00Z\",  \r\n   \"from\": \"2025-05-05T02:07:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"1\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}/TimescaleProviderService/api/values/recorded",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"boundaryType\": \"string\",  \r\n   \"to\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/recorded'"
-					},
-					"response": []
-				},
-				{
-					"name": "630747. Recorded values outside given period without values for the given boundaries /api/values/recorded",
+					"name": "630585. Recorded values InterpolatedLinear for given period without values for the given boundaries /api/values/recorded",
 					"event": [
 						{
 							"listen": "test",
@@ -4289,11 +4147,12 @@
 									"//One value after the requested period is retunred"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
-					"id": "d17ea812-c11c-476b-be66-ad34aa8dc9c5",
+					"id": "f82696f2-8c15-49c9-83b0-6b851bc379aa",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -4311,7 +4170,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"boundaryType\": \"Outside\",  \r\n   \"to\": \"2025-05-05T04:17:00Z\",  \r\n   \"from\": \"2025-05-05T02:17:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"1\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
+							"raw": "{  \r\n   \"boundaryType\": \"InterpolatedLinear\",  \r\n   \"to\": \"2025-05-05T04:17:00Z\",  \r\n   \"from\": \"2025-05-05T02:17:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"{{tag}}\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4373,17 +4232,16 @@
 					"response": []
 				},
 				{
-					"name": "630585. Recorded values InterpolatedLinear for given period without values for the given boundaries /api/values/recorded",
+					"name": "630730. Recorded values inside given period with values for the given boundaries /api/values/recorded",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "7b6a3531-1086-423d-bcfc-28a11998dee2",
+								"id": "5c308450-73eb-459f-ad02-29c175312229",
 								"exec": [
-									"//Status code is 200\r",
-									"//Values inside the requested period are returned\r",
-									"//One value before the requested period is returned\r",
-									"//One value after the requested period is retunred"
+									"//Status code 200\r",
+									"//Values inside the given period are returned\r",
+									"//Values for the boundaries are returned"
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -4391,7 +4249,7 @@
 							}
 						}
 					],
-					"id": "f82696f2-8c15-49c9-83b0-6b851bc379aa",
+					"id": "8171692f-64d7-447d-9b8d-5f68844df020",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -4409,7 +4267,56 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"boundaryType\": \"InterpolatedLinear\",  \r\n   \"to\": \"2025-05-05T04:17:00Z\",  \r\n   \"from\": \"2025-05-05T02:17:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"{{tag}}\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
+							"raw": "{  \r\n   \"boundaryType\": \"Inside\",  \r\n   \"to\": \"2026-03-09T15:12:59.743628Z\",  \r\n   \"from\": \"2026-03-09T14:41:16.004702Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"{{tag}}\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/TimescaleProviderService/api/values/recorded",
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"boundaryType\": \"string\",  \r\n   \"to\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/recorded'"
+					},
+					"response": []
+				},
+				{
+					"name": "630743. Recorded values outside given period with values for the given boundaries /api/values/recorded",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5c308450-73eb-459f-ad02-29c175312229",
+								"exec": [
+									"//Status code 200\r",
+									"//Values inside the given period are returned\r",
+									"//Values for the boundaries are returned\r",
+									"// Values before and after the boundaries are returned"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "fdf609f4-25e4-45f6-a6c4-995f4c06a8b5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n   \"boundaryType\": \"Outside\",  \r\n   \"to\": \"2026-03-09T14:41:21.465961Z\",  \r\n   \"from\": \"2026-03-09T14:41:16.004702Z\", \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"{{tag}}\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4435,7 +4342,8 @@
 									"// No more values are returned"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -4457,7 +4365,101 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"boundaryType\": \"InterpolatedStep\",  \r\n   \"to\": \"2025-05-05T04:15:00Z\",  \r\n   \"from\": \"2025-05-05T02:10:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"1\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
+							"raw": "{  \r\n   \"boundaryType\": \"InterpolatedStep\",  \r\n   \"to\": \"2025-05-05T04:15:00Z\",  \r\n   \"from\": \"2025-05-05T02:10:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"{{tag}}\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/TimescaleProviderService/api/values/recorded",
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"boundaryType\": \"string\",  \r\n   \"to\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/recorded'"
+					},
+					"response": []
+				},
+				{
+					"name": "630746. Recorded values inside given period without values for the given boundaries /api/values/recorded",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7b6a3531-1086-423d-bcfc-28a11998dee2",
+								"exec": [
+									"//Status code is 200\r",
+									"//Only values inside the requested period are returned"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "ad586dbd-31e8-499c-abd3-b9fbfd69a2be",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n   \"boundaryType\": \"Inside\",  \r\n   \"to\": \"2025-05-05T04:17:00Z\",  \r\n   \"from\": \"2025-05-05T02:07:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"1\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/TimescaleProviderService/api/values/recorded",
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"boundaryType\": \"string\",  \r\n   \"to\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/recorded'"
+					},
+					"response": []
+				},
+				{
+					"name": "630747.  Recorded values outside given period without values for the given boundaries /api/values/recorded",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7b6a3531-1086-423d-bcfc-28a11998dee2",
+								"exec": [
+									"//Status code is 200\r",
+									"//Values inside the requested period are returned\r",
+									"//One value before the requested period is returned\r",
+									"//One value after the requested period is retunred"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "d17ea812-c11c-476b-be66-ad34aa8dc9c5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n   \"boundaryType\": \"Outside\",  \r\n   \"to\": \"2025-05-05T04:17:00Z\",  \r\n   \"from\": \"2025-05-05T02:17:00Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"1\",  \r\n       \"schema\": \"kims\"  \r\n     }  \r\n   ]  \r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
