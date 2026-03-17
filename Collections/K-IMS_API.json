@@ -2628,6 +2628,25 @@
 								"header": []
 							},
 							"response": []
+						},
+						{
+							"name": "http://192.168.166.26:8083/api/v1/valveactivity/Vessel('Vessela')/Operations",
+							"id": "d2598f6d-efb7-403a-b406-1cbb58844bfd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+									}
+								],
+								"url": "http://192.168.166.26:8083/api/v1/valveactivity/Vessel('Vessela')/Operations",
+								"description": "Generated from cURL: curl -X GET \"http://192.168.166.26:8083/api/v1/valveactivity/Vessel('Vessela')/Operations\" -H  \"accept: application/json;odata.metadata=minimal;odata.streaming=true\""
+							},
+							"response": []
 						}
 					],
 					"id": "5ceb54b7-af02-48eb-950e-cba7ec0486d6"
