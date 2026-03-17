@@ -103,6 +103,25 @@
 									"query": [
 										{
 											"key": "$expand",
+											"value": "Values",
+											"disabled": true
+										},
+										{
+											"key": "$expand",
+											"value": "path",
+											"description": "The param is introduced in v 1.7.0",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "$expand",
+											"value": "path,values",
+											"description": "The param is introduced in v 1.7.0",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "$expand",
 											"value": "Summary",
 											"disabled": true
 										},
@@ -163,25 +182,6 @@
 											"value": "True",
 											"description": "True/False. If False - no interpolated values will be returned after the last recorded value. Use with expand=values parameter",
 											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "$expand",
-											"value": "path",
-											"description": "The param is introduced in v 1.7.0",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "$expand",
-											"value": "path,values",
-											"description": "The param is introduced in v 1.7.0",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "$expand",
-											"value": "Values",
 											"disabled": true
 										},
 										{
