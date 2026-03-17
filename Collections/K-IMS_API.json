@@ -2618,18 +2618,6 @@
 					"name": "Valve Activity Controller",
 					"item": [
 						{
-							"name": "New Request",
-							"id": "fe6a9813-55bc-446b-8408-2ceac05304f0",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": []
-							},
-							"response": []
-						},
-						{
 							"name": "http://192.168.166.26:8083/api/v1/valveactivity/Vessel('Vessela')/Operations",
 							"id": "d2598f6d-efb7-403a-b406-1cbb58844bfd",
 							"protocolProfileBehavior": {
