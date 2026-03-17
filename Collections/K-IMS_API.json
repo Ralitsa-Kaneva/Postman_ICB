@@ -2616,7 +2616,20 @@
 				},
 				{
 					"name": "Valve Activity Controller",
-					"item": [],
+					"item": [
+						{
+							"name": "New Request",
+							"id": "fe6a9813-55bc-446b-8408-2ceac05304f0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
 					"id": "5ceb54b7-af02-48eb-950e-cba7ec0486d6"
 				},
 				{
