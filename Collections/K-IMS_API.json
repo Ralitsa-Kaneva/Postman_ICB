@@ -2631,7 +2631,7 @@
 										"value": "application/json;odata.metadata=minimal;odata.streaming=true"
 									}
 								],
-								"url": "http://192.168.166.26:8083/api/v1/valveactivity/Vessel('Vessela')/Operations",
+								"url": "http://10.64.62.48:8084/api/v1/valveactivity/Vessel('VesselB')/Operations",
 								"description": "Generated from cURL: curl -X GET \"http://192.168.166.26:8083/api/v1/valveactivity/Vessel('Vessela')/Operations\" -H  \"accept: application/json;odata.metadata=minimal;odata.streaming=true\""
 							},
 							"response": []
