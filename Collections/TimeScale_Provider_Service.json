@@ -1870,7 +1870,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"tagName\": \"Reg_5.33_Kims_Text\",  \r\n   \"description\": \"timescale service provider test 5.33\",  \r\n   \"engUnit\": \"\",  \r\n   \"commandoGroup\": \"Regression 5.33\",  \r\n   \"schema\": \"Kims\",   \r\n   \"tagType\": \"Text\"  \r\n }",
+							"raw": "{  \r\n   \"tagName\": \"Reg_5.33_Kims_Text2\",  \r\n   \"description\": \"timescale service provider test 5.33\",  \r\n   \"engUnit\": \"\",  \r\n   \"commandoGroup\": \"Regression 5.33\",  \r\n   \"schema\": \"Kims\",   \r\n   \"tagType\": \"Text\"  \r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
