@@ -1883,19 +1883,20 @@
 					"response": []
 				},
 				{
-					"name": "690412. Create tag in KChief schema /api/metadata/tag",
+					"name": "236619. Create tag in KChief schema /api/metadata/tag",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"id": "13a1c8fa-865c-4d95-826a-9e99d64ea1d9",
 								"exec": [
-									"pm.test(\"Status code is 500\", function () {\r",
-									"    pm.response.to.have.status(500);\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -1917,7 +1918,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \r\n   \"description\": \"time service provider test\",  \r\n   \"engUnit\": \"\",  \r\n   \"commandoGroup\": \"\",  \r\n   \"tagName\": \"TPS_test_Kchief_bugRetest\",  \r\n   \"schema\": \"KChief\",  \r\n   \"tagType\": \"Double\"  \r\n }",
+							"raw": "{  \r\n   \"description\": \"time service provider test\",  \r\n   \"engUnit\": \"\",  \r\n   \"commandoGroup\": \"\",  \r\n   \"tagName\": \"TPS_test_Kchief_bugRetest2\",  \r\n   \"schema\": \"KChief\",  \r\n   \"tagType\": \"Double\"  \r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1925,7 +1926,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/tag",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"description\": \"string\",  \r\n   \"engUnit\": \"string\",  \r\n   \"commandoGroup\": \"string\",  \r\n   \"tagName\": \"string\",  \r\n   \"schema\": \"string\",  \r\n   \"tagType\": \"string\"  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/tag'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"description\": \"string\",  \n\"engUnit\": \"string\",  \n\"commandoGroup\": \"string\",  \n\"tagName\": \"string\",  \n\"schema\": \"string\",  \n\"tagType\": \"string\"  \n}'\n\n---\n\nOld ID 690412\n\n\\--"
 					},
 					"response": []
 				},
