@@ -908,6 +908,53 @@
 								"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"name\": \"string\",  \r\n   \"schema\": \"string\"  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/last'"
 							},
 							"response": []
+						},
+						{
+							"name": "628052. Create tag in KChief schema /api/metadata/tag",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "13a1c8fa-865c-4d95-826a-9e99d64ea1d9",
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "127407e2-b012-42ce-a4bf-ef4fbbdb4de1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \r\n   \"description\": \"time service provider test\",  \r\n   \"engUnit\": \"\",  \r\n   \"commandoGroup\": \"\",  \r\n   \"tagName\": \"TPS_test_Kchief_bugRetest\",  \r\n   \"schema\": \"KChief\",  \r\n   \"tagType\": \"Double\"  \r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/TimescaleProviderService/api/metadata/tag",
+								"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"description\": \"string\",  \r\n   \"engUnit\": \"string\",  \r\n   \"commandoGroup\": \"string\",  \r\n   \"tagName\": \"string\",  \r\n   \"schema\": \"string\",  \r\n   \"tagType\": \"string\"  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/tag'"
+							},
+							"response": []
 						}
 					],
 					"id": "f662f336-a492-4f69-8751-d1a61b10c6b4"
@@ -1836,54 +1883,7 @@
 					"response": []
 				},
 				{
-					"name": "628052. Create tag in KChief schema /api/metadata/tag",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "13a1c8fa-865c-4d95-826a-9e99d64ea1d9",
-								"exec": [
-									"pm.test(\"Status code is 500\", function () {\r",
-									"    pm.response.to.have.status(500);\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "127407e2-b012-42ce-a4bf-ef4fbbdb4de1",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{  \r\n   \"description\": \"time service provider test\",  \r\n   \"engUnit\": \"\",  \r\n   \"commandoGroup\": \"\",  \r\n   \"tagName\": \"TPS_test_Kchief_bugRetest\",  \r\n   \"schema\": \"KChief\",  \r\n   \"tagType\": \"Double\"  \r\n }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/tag",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"description\": \"string\",  \r\n   \"engUnit\": \"string\",  \r\n   \"commandoGroup\": \"string\",  \r\n   \"tagName\": \"string\",  \r\n   \"schema\": \"string\",  \r\n   \"tagType\": \"string\"  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/tag'"
-					},
-					"response": []
-				},
-				{
-					"name": "628052. Create tag in KChief schema /api/metadata/tag Copy",
+					"name": "690412. Create tag in KChief schema /api/metadata/tag",
 					"event": [
 						{
 							"listen": "test",
