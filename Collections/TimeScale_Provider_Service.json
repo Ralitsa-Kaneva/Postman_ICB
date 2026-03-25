@@ -4857,7 +4857,7 @@
 					"response": []
 				},
 				{
-					"name": "630376. Sum raw values in the given intervals for the given range /api/summaries/filtered",
+					"name": "232990. Sum raw values in the given intervals for the given range /api/summaries/filtered",
 					"id": "02bfd0ad-a685-4edf-8b81-3e44d983eec1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -4916,7 +4916,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/summaries/filtered",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"summaryTypes\": [  \r\n     \"string\"  \r\n   ],  \r\n   \"intervalSeconds\": 0,  \r\n   \"to\": \"2025-02-21T13:47:21.789Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.789Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/summaries/filtered'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"summaryTypes\": \\[  \n\"string\"  \n\\],  \n\"intervalSeconds\": 0,  \n\"to\": \"2025-02-21T13:47:21.789Z\",  \n\"from\": \"2025-02-21T13:47:21.789Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}'\n\n---\n\nOld ID 630380"
 					},
 					"response": []
 				},
