@@ -4889,7 +4889,7 @@
 					"response": []
 				},
 				{
-					"name": "630380. TimeWeighedAverage values in the given intervals for the given range /api/summaries/filtered",
+					"name": "233002. TimeWeighedAverage values in the given intervals for the given range /api/summaries/filtered",
 					"id": "124a5f2e-9c37-46df-9fa1-e7fac5aaa4c6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
