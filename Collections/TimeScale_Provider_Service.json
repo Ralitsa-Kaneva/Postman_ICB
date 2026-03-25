@@ -1038,7 +1038,7 @@
 					"response": []
 				},
 				{
-					"name": "625820. GET /api/metadata/schemas",
+					"name": "230279. GET /api/metadata/schemas",
 					"event": [
 						{
 							"listen": "test",
@@ -1091,7 +1091,7 @@
 							}
 						],
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/schemas",
-						"description": "Generated from cURL: curl -X GET --header 'Accept: application/json' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/schemas'"
+						"description": "Generated from cURL: curl -X GET --header 'Accept: application/json'\n\n---\n\nOld ID 625820"
 					},
 					"response": []
 				},
