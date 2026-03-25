@@ -4377,7 +4377,7 @@
 					"response": []
 				},
 				{
-					"name": "630745. Recorded values InterpolatedStep for given period with values for the given boundaries /api/values/recorded",
+					"name": "233324. Recorded values InterpolatedStep for given period with values for the given boundaries /api/values/recorded",
 					"event": [
 						{
 							"listen": "test",
@@ -4421,7 +4421,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/values/recorded",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"boundaryType\": \"string\",  \r\n   \"to\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/recorded'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"boundaryType\": \"string\",  \n\"to\": \"2025-02-21T13:47:21.794Z\",  \n\"from\": \"2025-02-21T13:47:21.794Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}'\n\n---\n\nOld ID 630745"
 					},
 					"response": []
 				},
@@ -4472,7 +4472,7 @@
 					"response": []
 				},
 				{
-					"name": "630747.  Recorded values outside given period without values for the given boundaries /api/values/recorded",
+					"name": "233327.  Recorded values outside given period without values for the given boundaries /api/values/recorded",
 					"event": [
 						{
 							"listen": "test",
@@ -4515,7 +4515,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/values/recorded",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"boundaryType\": \"string\",  \r\n   \"to\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.794Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/recorded'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"boundaryType\": \"string\",  \n\"to\": \"2025-02-21T13:47:21.794Z\",  \n\"from\": \"2025-02-21T13:47:21.794Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}'\n\n---\n\nOld ID 630747"
 					},
 					"response": []
 				},
