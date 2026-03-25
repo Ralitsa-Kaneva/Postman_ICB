@@ -3540,7 +3540,7 @@
 					"response": []
 				},
 				{
-					"name": "693115. Insert good value for new timestamp with IgnoreExisting parameter /api/values/insert",
+					"name": "238078. Insert good value for new timestamp with IgnoreExisting parameter /api/values/insert",
 					"id": "c656bc09-f685-4f09-b645-4f2dcd644911",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -3567,12 +3567,12 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/values/insert",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"insertOption\": 0,  \r\n   \"tagName\": \"string\",  \r\n   \"values\": [  \r\n     {  \r\n       \"quality\": \"string\",  \r\n       \"time\": \"2025-02-21T13:47:21.813Z\",  \r\n       \"value\": {}  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/insert'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"insertOption\": 0,  \n\"tagName\": \"string\",  \n\"values\": \\[  \n{  \n\"quality\": \"string\",  \n\"time\": \"2025-02-21T13:47:21.813Z\",  \n\"value\": {}  \n}  \n\\]  \n}'\n\n---\n\nOld ID 693115"
 					},
 					"response": []
 				},
 				{
-					"name": "693128. Insert good value for existing timestamp with \"IgnoreExisting\" parameter using /api/values/insert",
+					"name": "238097. Insert good value for existing timestamp with \"IgnoreExisting\" parameter using /api/values/insert",
 					"event": [
 						{
 							"listen": "test",
@@ -3618,7 +3618,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/values/insert",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"insertOption\": 0,  \r\n   \"tagName\": \"string\",  \r\n   \"values\": [  \r\n     {  \r\n       \"quality\": \"string\",  \r\n       \"time\": \"2025-02-21T13:47:21.813Z\",  \r\n       \"value\": {}  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/insert'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"insertOption\": 0,  \n\"tagName\": \"string\",  \n\"values\": \\[  \n{  \n\"quality\": \"string\",  \n\"time\": \"2025-02-21T13:47:21.813Z\",  \n\"value\": {}  \n}  \n\\]  \n}'\n\n---\n\nOld ID 693128"
 					},
 					"response": []
 				},
@@ -3823,7 +3823,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/values/insert",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"insertOption\": 0,  \r\n   \"tagName\": \"string\",  \r\n   \"values\": [  \r\n     {  \r\n       \"quality\": \"string\",  \r\n       \"time\": \"2025-02-21T13:47:21.813Z\",  \r\n       \"value\": {}  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/insert'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"insertOption\": 0,  \n\"tagName\": \"string\",  \n\"values\": \\[  \n{  \n\"quality\": \"string\",  \n\"time\": \"2025-02-21T13:47:21.813Z\",  \n\"value\": {}  \n}  \n\\]  \n}'\n\n---\n\nOld ID 693322"
 					},
 					"response": []
 				},
