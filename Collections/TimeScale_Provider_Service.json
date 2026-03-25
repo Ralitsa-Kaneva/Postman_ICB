@@ -1208,7 +1208,7 @@
 					"response": []
 				},
 				{
-					"name": "626034. GET /api/metadata/qualities",
+					"name": "230489. GET /api/metadata/qualities",
 					"id": "78b6519a-efe9-4fac-88ee-5c19900a9e42",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1222,7 +1222,7 @@
 							}
 						],
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/qualities",
-						"description": "Generated from cURL: curl -X GET --header 'Accept: application/json' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/qualities'"
+						"description": "Generated from cURL: curl -X GET --header 'Accept: application/json'\n\n---\n\nOld ID 626034"
 					},
 					"response": []
 				},
@@ -2995,7 +2995,7 @@
 					"response": []
 				},
 				{
-					"name": "725728. Run /api/values/last for tags with multiple values",
+					"name": "235554. Run /api/values/last for tags with multiple values",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -3097,7 +3097,7 @@
 								}
 							]
 						},
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"name\": \"string\",  \r\n   \"schema\": \"string\"  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/last'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}'\n\n---\n\nOld ID 725728"
 					},
 					"response": []
 				},
