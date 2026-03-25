@@ -2362,7 +2362,7 @@
 					"response": []
 				},
 				{
-					"name": "628063. [Kims] Filter by CommandoGroup /api/metadata/tags/filtered",
+					"name": "231594. [Kims] Filter by CommandoGroup /api/metadata/tags/filtered",
 					"id": "f95e031b-e027-4491-9eb1-3fc36d92442a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2389,7 +2389,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/tags/filtered",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"filters\": [  \r\n     {  \r\n       \"type\": \"string\",  \r\n       \"value\": \"string\"  \r\n     }  \r\n   ],  \r\n   \"count\": 0,  \r\n   \"schema\": 0,  \r\n   \"orFiltersLogicalOperator\": true  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/tags/filtered'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"filters\": \\[  \n{  \n\"type\": \"string\",  \n\"value\": \"string\"  \n}  \n\\],  \n\"count\": 0,  \n\"schema\": 0,  \n\"orFiltersLogicalOperator\": true  \n}'\n\n---\n\nOld ID 628063"
 					},
 					"response": []
 				},
@@ -2725,7 +2725,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/tags/filtered",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"filters\": [  \r\n     {  \r\n       \"type\": \"string\",  \r\n       \"value\": \"string\"  \r\n     }  \r\n   ],  \r\n   \"count\": 0,  \r\n   \"schema\": 0,  \r\n   \"orFiltersLogicalOperator\": true  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/tags/filtered'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"filters\": \\[  \n{  \n\"type\": \"string\",  \n\"value\": \"string\"  \n}  \n\\],  \n\"count\": 0,  \n\"schema\": 0,  \n\"orFiltersLogicalOperator\": true  \n}'\n\n---\n\nOld ID 628162"
 					},
 					"response": []
 				},
