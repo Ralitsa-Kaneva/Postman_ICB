@@ -2064,7 +2064,7 @@
 					"response": []
 				},
 				{
-					"name": "628059. [Kims] Filter by Description /api/metadata/tags/filtered",
+					"name": "231590. [Kims] Filter by Description /api/metadata/tags/filtered",
 					"event": [
 						{
 							"listen": "test",
@@ -2730,7 +2730,7 @@
 					"response": []
 				},
 				{
-					"name": "628168. [Kims] Filter by custom combination of filter types with \"and\" operator /api/metadata/tags/filtered",
+					"name": "231678. [Kims] Filter by custom combination of filter types with \"and\" operator /api/metadata/tags/filtered",
 					"event": [
 						{
 							"listen": "test",
@@ -2772,12 +2772,12 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/tags/filtered",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"filters\": [  \r\n     {  \r\n       \"type\": \"string\",  \r\n       \"value\": \"string\"  \r\n     }  \r\n   ],  \r\n   \"count\": 0,  \r\n   \"schema\": 0,  \r\n   \"orFiltersLogicalOperator\": true  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/tags/filtered'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"filters\": \\[  \n{  \n\"type\": \"string\",  \n\"value\": \"string\"  \n}  \n\\],  \n\"count\": 0,  \n\"schema\": 0,  \n\"orFiltersLogicalOperator\": true  \n}'\n\n---\n\nOld ID 628168"
 					},
 					"response": []
 				},
 				{
-					"name": "628165. [Kims] Filter by \"custom fields\" with \"and\" operator /api/metadata/tags/filtered",
+					"name": "231672. [Kims] Filter by \"custom fields\" with \"and\" operator /api/metadata/tags/filtered",
 					"event": [
 						{
 							"listen": "test",
@@ -2819,7 +2819,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/tags/filtered",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"filters\": [  \r\n     {  \r\n       \"type\": \"string\",  \r\n       \"value\": \"string\"  \r\n     }  \r\n   ],  \r\n   \"count\": 0,  \r\n   \"schema\": 0,  \r\n   \"orFiltersLogicalOperator\": true  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/tags/filtered'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"filters\": \\[  \n{  \n\"type\": \"string\",  \n\"value\": \"string\"  \n}  \n\\],  \n\"count\": 0,  \n\"schema\": 0,  \n\"orFiltersLogicalOperator\": true  \n}'\n\n---\n\nOld ID 628165"
 					},
 					"response": []
 				},
