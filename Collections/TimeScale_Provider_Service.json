@@ -3828,7 +3828,7 @@
 					"response": []
 				},
 				{
-					"name": "693326. Replace values for range with existing values /api/values/replacе",
+					"name": "238154. Replace values for range with existing values /api/values/replacе",
 					"event": [
 						{
 							"listen": "test",
@@ -3876,7 +3876,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/values/replace",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"start\": \"2025-02-21T13:47:21.811Z\",  \r\n   \"end\": \"2025-02-21T13:47:21.811Z\",  \r\n   \"tagName\": \"string\",  \r\n   \"values\": [  \r\n     {  \r\n       \"quality\": \"string\",  \r\n       \"time\": \"2025-02-21T13:47:21.811Z\",  \r\n       \"value\": {}  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/replace'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"start\": \"2025-02-21T13:47:21.811Z\",  \n\"end\": \"2025-02-21T13:47:21.811Z\",  \n\"tagName\": \"string\",  \n\"values\": \\[  \n{  \n\"quality\": \"string\",  \n\"time\": \"2025-02-21T13:47:21.811Z\",  \n\"value\": {}  \n}  \n\\]  \n}'\n\n---\n\nOld ID 693326"
 					},
 					"response": []
 				},
@@ -4596,7 +4596,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/values/resampled",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"step\": true,  \r\n   \"intervalSeconds\": 0,  \r\n   \"to\": \"2025-02-21T13:47:21.797Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.797Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/resampled'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"step\": true,  \n\"intervalSeconds\": 0,  \n\"to\": \"2025-02-21T13:47:21.797Z\",  \n\"from\": \"2025-02-21T13:47:21.797Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}'\n\n---\n\nOld ID 630606"
 					},
 					"response": []
 				},
