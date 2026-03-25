@@ -1096,7 +1096,7 @@
 					"response": []
 				},
 				{
-					"name": "625823. GET /api/metadata/types",
+					"name": "230285. GET /api/metadata/types",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1203,7 +1203,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/types",
-						"description": "Generated from cURL: curl -X GET --header 'Accept: application/json' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/types'"
+						"description": "Generated from cURL: curl -X GET --header 'Accept: application/json'\n\n---\n\nOld ID 625823"
 					},
 					"response": []
 				},
@@ -4884,7 +4884,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/summaries/filtered",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"summaryTypes\": [  \r\n     \"string\"  \r\n   ],  \r\n   \"intervalSeconds\": 0,  \r\n   \"to\": \"2025-02-21T13:47:21.789Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.789Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/summaries/filtered'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"summaryTypes\": \\[  \n\"string\"  \n\\],  \n\"intervalSeconds\": 0,  \n\"to\": \"2025-02-21T13:47:21.789Z\",  \n\"from\": \"2025-02-21T13:47:21.789Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}'\n\n---\n\nOld ID 630376"
 					},
 					"response": []
 				},
@@ -5180,7 +5180,7 @@
 					"response": []
 				},
 				{
-					"name": "698737. Standard Deviation values in the given intervals for the given range /api/summaries/filtered",
+					"name": "225815. Standard Deviation values in the given intervals for the given range /api/summaries/filtered",
 					"id": "779891d4-b078-47ec-94c6-acfacb89315b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -5207,7 +5207,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/summaries/filtered",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"summaryTypes\": \\[  \n\"string\"  \n\\],  \n\"intervalSeconds\": 0,  \n\"to\": \"2025-02-21T13:47:21.789Z\",  \n\"from\": \"2025-02-21T13:47:21.789Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}' '[http://192.168.166.14:11000/TimescaleProviderService/api/summaries/filtered'](http://192.168.166.14:11000/TimescaleProviderService/api/summaries/filtered')\n\n---\n\nThe Standard Deviation is written in the test case and also there is an excel file attached. Note that when using intervals the valu at the end of the interval is not counted if the last interval is full. If not full - the value is counted in the calculations."
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"summaryTypes\": \\[  \n\"string\"  \n\\],  \n\"intervalSeconds\": 0,  \n\"to\": \"2025-02-21T13:47:21.789Z\",  \n\"from\": \"2025-02-21T13:47:21.789Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}'\n\n---\n\nThe Standard Deviation is written in the test case and also there is an excel file attached. Note that when using intervals the valu at the end of the interval is not counted if the last interval is full. If not full - the value is counted in the calculations.\n\n---\n\nOld ID 698737"
 					},
 					"response": []
 				},
