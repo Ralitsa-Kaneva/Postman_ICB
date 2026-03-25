@@ -1878,7 +1878,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/tag",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"description\": \"string\",  \r\n   \"engUnit\": \"string\",  \r\n   \"commandoGroup\": \"string\",  \r\n   \"tagName\": \"string\",  \r\n   \"schema\": \"string\",  \r\n   \"tagType\": \"string\"  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/tag'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"description\": \"string\",  \n\"engUnit\": \"string\",  \n\"commandoGroup\": \"string\",  \n\"tagName\": \"string\",  \n\"schema\": \"string\",  \n\"tagType\": \"string\"  \n}'\n\n---\n\nOld ID 626003"
 					},
 					"response": []
 				},
@@ -2180,7 +2180,7 @@
 					"response": []
 				},
 				{
-					"name": "628114. [Kims] Filter by \"*\" Description /api/metadata/tags/filtered",
+					"name": "231617. [Kims] Filter by \"*\" Description /api/metadata/tags/filtered",
 					"event": [
 						{
 							"listen": "test",
@@ -2447,7 +2447,7 @@
 					"response": []
 				},
 				{
-					"name": "628119. [Kims] Filter by \"*\" CommandoGroup /api/metadata/tags/filtered",
+					"name": "231622. [Kims] Filter by \"*\" CommandoGroup /api/metadata/tags/filtered",
 					"event": [
 						{
 							"listen": "test",
@@ -2489,7 +2489,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/tags/filtered",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"filters\": [  \r\n     {  \r\n       \"type\": \"string\",  \r\n       \"value\": \"string\"  \r\n     }  \r\n   ],  \r\n   \"count\": 0,  \r\n   \"schema\": 0,  \r\n   \"orFiltersLogicalOperator\": true  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/tags/filtered'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"filters\": \\[  \n{  \n\"type\": \"string\",  \n\"value\": \"string\"  \n}  \n\\],  \n\"count\": 0,  \n\"schema\": 0,  \n\"orFiltersLogicalOperator\": true  \n}'\n\n---\n\nOld ID 628119"
 					},
 					"response": []
 				},
@@ -3985,7 +3985,7 @@
 					"response": []
 				},
 				{
-					"name": "693413. Replace values  for not existing tag with /api/values/replacе",
+					"name": "238166. Replace values  for not existing tag with /api/values/replacе",
 					"event": [
 						{
 							"listen": "test",
@@ -4033,7 +4033,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/values/replace",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"start\": \"2025-02-21T13:47:21.811Z\",  \r\n   \"end\": \"2025-02-21T13:47:21.811Z\",  \r\n   \"tagName\": \"string\",  \r\n   \"values\": [  \r\n     {  \r\n       \"quality\": \"string\",  \r\n       \"time\": \"2025-02-21T13:47:21.811Z\",  \r\n       \"value\": {}  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/replace'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"start\": \"2025-02-21T13:47:21.811Z\",  \n\"end\": \"2025-02-21T13:47:21.811Z\",  \n\"tagName\": \"string\",  \n\"values\": \\[  \n{  \n\"quality\": \"string\",  \n\"time\": \"2025-02-21T13:47:21.811Z\",  \n\"value\": {}  \n}  \n\\]  \n}'\n\n---\n\nOld ID 693413"
 					},
 					"response": []
 				},
@@ -4760,7 +4760,7 @@
 					"response": []
 				},
 				{
-					"name": "630370. Count the raw values in the given intervals for the given range /api/summaries/filtered",
+					"name": "232981. Count the raw values in the given intervals for the given range /api/summaries/filtered",
 					"id": "933d47fd-4009-4ee9-bd2c-ace5db6dbc09",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -4787,7 +4787,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/summaries/filtered",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"summaryTypes\": [  \r\n     \"string\"  \r\n   ],  \r\n   \"intervalSeconds\": 0,  \r\n   \"to\": \"2025-02-21T13:47:21.789Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.789Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/summaries/filtered'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"summaryTypes\": \\[  \n\"string\"  \n\\],  \n\"intervalSeconds\": 0,  \n\"to\": \"2025-02-21T13:47:21.789Z\",  \n\"from\": \"2025-02-21T13:47:21.789Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}'\n\n---\n\nOld ID 630370"
 					},
 					"response": []
 				},
