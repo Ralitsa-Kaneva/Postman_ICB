@@ -2228,7 +2228,7 @@
 					"response": []
 				},
 				{
-					"name": "628060. [Kims] Filter by UnitOfMeasure /api/metadata/tags/filtered",
+					"name": "231592. [Kims] Filter by UnitOfMeasure /api/metadata/tags/filtered",
 					"id": "e2c3a16a-b3fd-4d70-b2d0-df9f202d3618",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2255,7 +2255,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/tags/filtered",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"filters\": [  \r\n     {  \r\n       \"type\": \"string\",  \r\n       \"value\": \"string\"  \r\n     }  \r\n   ],  \r\n   \"count\": 0,  \r\n   \"schema\": 0,  \r\n   \"orFiltersLogicalOperator\": true  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/tags/filtered'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"filters\": \\[  \n{  \n\"type\": \"string\",  \n\"value\": \"string\"  \n}  \n\\],  \n\"count\": 0,  \n\"schema\": 0,  \n\"orFiltersLogicalOperator\": true  \n}'\n\n---\n\nOld ID 628060"
 					},
 					"response": []
 				},
@@ -4696,7 +4696,7 @@
 					"response": []
 				},
 				{
-					"name": "630753. Get plot values for given period without values for the given boundaries /api/values/plot",
+					"name": "233329. Get plot values for given period without values for the given boundaries /api/values/plot",
 					"id": "13d4c56a-9fd7-4f20-ad0e-317aa3d6befa",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -4723,12 +4723,12 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/values/plot",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"step\": true,  \r\n   \"intervalSeconds\": 0,  \r\n   \"to\": \"2025-02-21T13:47:21.802Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.802Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/plot'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"step\": true,  \n\"intervalSeconds\": 0,  \n\"to\": \"2025-02-21T13:47:21.802Z\",  \n\"from\": \"2025-02-21T13:47:21.802Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}'\n\n---\n\nOld ID 630753"
 					},
 					"response": []
 				},
 				{
-					"name": "630754. Get plot values for given period with values for the given boundaries  /api/values/plot",
+					"name": "233331. Get plot values for given period with values for the given boundaries  /api/values/plot",
 					"id": "0eaed97f-ba76-41be-8161-b5f0221dc867",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -4755,7 +4755,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/values/plot",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"step\": true,  \r\n   \"intervalSeconds\": 0,  \r\n   \"to\": \"2025-02-21T13:47:21.802Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.802Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/plot'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"step\": true,  \n\"intervalSeconds\": 0,  \n\"to\": \"2025-02-21T13:47:21.802Z\",  \n\"from\": \"2025-02-21T13:47:21.802Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}'\n\n---\n\nOld ID 630754"
 					},
 					"response": []
 				},
