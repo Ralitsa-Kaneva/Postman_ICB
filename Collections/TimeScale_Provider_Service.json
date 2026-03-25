@@ -1227,7 +1227,7 @@
 					"response": []
 				},
 				{
-					"name": "626003. Create tag from type double /api/metadata/tag",
+					"name": "230444. Create tag from type double /api/metadata/tag",
 					"event": [
 						{
 							"listen": "test",
@@ -1270,12 +1270,12 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/tag",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"description\": \"string\",  \r\n   \"engUnit\": \"string\",  \r\n   \"commandoGroup\": \"string\",  \r\n   \"tagName\": \"string\",  \r\n   \"schema\": \"string\",  \r\n   \"tagType\": \"string\"  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/tag'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"description\": \"string\",  \n\"engUnit\": \"string\",  \n\"commandoGroup\": \"string\",  \n\"tagName\": \"string\",  \n\"schema\": \"string\",  \n\"tagType\": \"string\"  \n}'\n\n---\n\nOld ID 626003"
 					},
 					"response": []
 				},
 				{
-					"name": "626003. Create tag from type NoType /api/metadata/tag",
+					"name": "230444. Create tag from type NoType /api/metadata/tag",
 					"event": [
 						{
 							"listen": "test",
@@ -1318,7 +1318,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/metadata/tag",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"description\": \"string\",  \r\n   \"engUnit\": \"string\",  \r\n   \"commandoGroup\": \"string\",  \r\n   \"tagName\": \"string\",  \r\n   \"schema\": \"string\",  \r\n   \"tagType\": \"string\"  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/metadata/tag'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"description\": \"string\",  \n\"engUnit\": \"string\",  \n\"commandoGroup\": \"string\",  \n\"tagName\": \"string\",  \n\"schema\": \"string\",  \n\"tagType\": \"string\"  \n}'\n\n---\n\nOld ID 626003"
 					},
 					"response": []
 				},
