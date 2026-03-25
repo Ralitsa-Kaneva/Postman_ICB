@@ -3732,7 +3732,7 @@
 					"response": []
 				},
 				{
-					"name": "693160. Insert good value for new timestamp with InsertBulk parameter /api/values/insert",
+					"name": "238138. Insert good value for new timestamp with InsertBulk parameter /api/values/insert",
 					"id": "72aa565b-eb3d-4e19-8516-de2d34ac88f2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -3759,12 +3759,12 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/values/insert",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"insertOption\": 0,  \r\n   \"tagName\": \"string\",  \r\n   \"values\": [  \r\n     {  \r\n       \"quality\": \"string\",  \r\n       \"time\": \"2025-02-21T13:47:21.813Z\",  \r\n       \"value\": {}  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/insert'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"insertOption\": 0,  \n\"tagName\": \"string\",  \n\"values\": \\[  \n{  \n\"quality\": \"string\",  \n\"time\": \"2025-02-21T13:47:21.813Z\",  \n\"value\": {}  \n}  \n\\]  \n}'\n\n---\n\nOld ID 693160"
 					},
 					"response": []
 				},
 				{
-					"name": "693164. Insert good value for new timestamp with ReplaceExisting parameter /api/values/insert",
+					"name": "238144. Insert good value for new timestamp with ReplaceExisting parameter /api/values/insert",
 					"id": "7158356c-dd30-4acf-8a38-ba929f80980e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -3791,7 +3791,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/values/insert",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"insertOption\": 0,  \r\n   \"tagName\": \"string\",  \r\n   \"values\": [  \r\n     {  \r\n       \"quality\": \"string\",  \r\n       \"time\": \"2025-02-21T13:47:21.813Z\",  \r\n       \"value\": {}  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/values/insert'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"insertOption\": 0,  \n\"tagName\": \"string\",  \n\"values\": \\[  \n{  \n\"quality\": \"string\",  \n\"time\": \"2025-02-21T13:47:21.813Z\",  \n\"value\": {}  \n}  \n\\]  \n}'\n\n---\n\nOld ID 693164"
 					},
 					"response": []
 				},
@@ -4824,7 +4824,7 @@
 					"response": []
 				},
 				{
-					"name": "630375. Max raw value in the given intervals for the given range /api/summaries/filtered",
+					"name": "232989. Max raw value in the given intervals for the given range /api/summaries/filtered",
 					"id": "b82f7740-2e2e-4008-af28-af527fe8729c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -4851,7 +4851,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/summaries/filtered",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \r\n   \"summaryTypes\": [  \r\n     \"string\"  \r\n   ],  \r\n   \"intervalSeconds\": 0,  \r\n   \"to\": \"2025-02-21T13:47:21.789Z\",  \r\n   \"from\": \"2025-02-21T13:47:21.789Z\",  \r\n   \"tags\": [  \r\n     {  \r\n       \"name\": \"string\",  \r\n       \"schema\": \"string\"  \r\n     }  \r\n   ]  \r\n }' 'http://192.168.166.14:11000/TimescaleProviderService/api/summaries/filtered'"
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"summaryTypes\": \\[  \n\"string\"  \n\\],  \n\"intervalSeconds\": 0,  \n\"to\": \"2025-02-21T13:47:21.789Z\",  \n\"from\": \"2025-02-21T13:47:21.789Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}'\n\n---\n\nOld ID 630375"
 					},
 					"response": []
 				},
@@ -5147,7 +5147,7 @@
 					"response": []
 				},
 				{
-					"name": "698735. Mean values in the given intervals for the given range /api/summaries/filtered",
+					"name": "225813. Mean values in the given intervals for the given range /api/summaries/filtered",
 					"id": "44f41918-1e53-4a89-be6a-05b67097dc8c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -5174,7 +5174,7 @@
 							}
 						},
 						"url": "{{baseURL}}/TimescaleProviderService/api/summaries/filtered",
-						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"summaryTypes\": \\[  \n\"string\"  \n\\],  \n\"intervalSeconds\": 0,  \n\"to\": \"2025-02-21T13:47:21.789Z\",  \n\"from\": \"2025-02-21T13:47:21.789Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}' '[http://192.168.166.14:11000/TimescaleProviderService/api/summaries/filtered'](http://192.168.166.14:11000/TimescaleProviderService/api/summaries/filtered')\n\n---\n\nThe Mean values is the arithmetic average of the values. Note that when using intervals the value at the end of the interval is not counted if the last interval is full. If not full - the value is counted in the calculations."
+						"description": "Generated from cURL: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  \n\"summaryTypes\": \\[  \n\"string\"  \n\\],  \n\"intervalSeconds\": 0,  \n\"to\": \"2025-02-21T13:47:21.789Z\",  \n\"from\": \"2025-02-21T13:47:21.789Z\",  \n\"tags\": \\[  \n{  \n\"name\": \"string\",  \n\"schema\": \"string\"  \n}  \n\\]  \n}'\n\n---\n\nThe Mean values is the arithmetic average of the values. Note that when using intervals the value at the end of the interval is not counted if the last interval is full. If not full - the value is counted in the calculations.\n\n---\n\n﻿Old ID 698735"
 					},
 					"response": []
 				},
