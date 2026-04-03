@@ -2782,6 +2782,25 @@
 								"description": "Generated from cURL: curl -X GET \"http://192.168.166.26:8083/api/v1/valveactivity/Vessel('vesse%3Ba')/Details\" -H  \"accept: application/json;odata.metadata=minimal;odata.streaming=true\""
 							},
 							"response": []
+						},
+						{
+							"name": "http://192.168.166.26:8083/api/v1/valveactivity/Contexts",
+							"id": "c55353b6-9b4d-47a3-9c79-2a5e57100222",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+									}
+								],
+								"url": "{{BaseURL}}/valveactivity/Contexts",
+								"description": "Generated from cURL: curl -X GET \"http://192.168.166.26:8083/api/v1/valveactivity/Contexts\" -H  \"accept: application/json;odata.metadata=minimal;odata.streaming=true\""
+							},
+							"response": []
 						}
 					],
 					"id": "5ceb54b7-af02-48eb-950e-cba7ec0486d6"
