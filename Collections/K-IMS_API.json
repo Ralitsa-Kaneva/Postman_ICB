@@ -2677,6 +2677,69 @@
 								"description": "The endpoint is introduced in K-IMS API version 1.9.0"
 							},
 							"response": []
+						},
+						{
+							"name": "http://192.168.166.26:8083/api/v1/valveactivity/Vessel('vessea')/Overview",
+							"id": "e52a0f87-59a6-4794-8c8d-809e50574f2a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+									}
+								],
+								"url": {
+									"raw": "{{BaseURL}}/valveactivity/Vessel('vessea')/Overview?tagName&showDetails&from&to&showFailed&showNotOperated&showOperatedOk",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"valveactivity",
+										"Vessel('vessea')",
+										"Overview"
+									],
+									"query": [
+										{
+											"key": "tagName",
+											"value": null
+										},
+										{
+											"key": "showDetails",
+											"value": null,
+											"description": "true/false"
+										},
+										{
+											"key": "from",
+											"value": null
+										},
+										{
+											"key": "to",
+											"value": null
+										},
+										{
+											"key": "showFailed",
+											"value": null,
+											"description": "true/false"
+										},
+										{
+											"key": "showNotOperated",
+											"value": null,
+											"description": "true/false"
+										},
+										{
+											"key": "showOperatedOk",
+											"value": null,
+											"description": "true/false"
+										}
+									]
+								},
+								"description": "Generated from cURL: curl -X GET \"http://192.168.166.26:8083/api/v1/valveactivity/Vessel('vessea')/Overview\" -H  \"accept: application/json;odata.metadata=minimal;odata.streaming=true\""
+							},
+							"response": []
 						}
 					],
 					"id": "5ceb54b7-af02-48eb-950e-cba7ec0486d6"
