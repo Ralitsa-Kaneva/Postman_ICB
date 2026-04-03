@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "0370eff8-5a08-44e2-a68c-c1eff8cafcaf",
+		"name": "Automation: Vessel Controller: ExpandValues",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "334925.  Run {{url}}:{{port}}/api/v1/Vessels('{{vessel}}')/Tags?$expand=Values&repeat=latest Get request (good values)",
+			"id": "a063aa7a-600d-43d2-87b7-c76eb66cc1fc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/api/v1/Vessels('{{vessel}}')/Tags?$expand=Values&repeat=latest",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"Vessels('{{vessel}}')",
+						"Tags"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "Values"
+						},
+						{
+							"key": "repeat",
+							"value": "latest"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{Password}}",
+			"username": "{{User}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3c32bcb9-64d6-4462-bddc-74609f601d40",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4a1e9b91-caf2-4c73-b71a-5035db1d72b9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
