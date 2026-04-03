@@ -2631,8 +2631,50 @@
 										"value": "application/json;odata.metadata=minimal;odata.streaming=true"
 									}
 								],
-								"url": "http://10.64.62.48:8084/api/v1/valveactivity/Vessel('VesselB')/Operations",
-								"description": "Generated from cURL: curl -X GET \"http://192.168.166.26:8083/api/v1/valveactivity/Vessel('Vessela')/Operations\" -H  \"accept: application/json;odata.metadata=minimal;odata.streaming=true\""
+								"url": {
+									"raw": "{{BaseURL}}/valveactivity/Vessel('VesselA')/Operations",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"valveactivity",
+										"Vessel('VesselA')",
+										"Operations"
+									],
+									"query": [
+										{
+											"key": "tagName",
+											"value": null,
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "contexts",
+											"value": null,
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "statuses",
+											"value": null,
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "from",
+											"value": null,
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "to",
+											"value": null,
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"description": "The endpoint is introduced in K-IMS API version 1.9.0"
 							},
 							"response": []
 						}
