@@ -2740,6 +2740,48 @@
 								"description": "Generated from cURL: curl -X GET \"http://192.168.166.26:8083/api/v1/valveactivity/Vessel('vessea')/Overview\" -H  \"accept: application/json;odata.metadata=minimal;odata.streaming=true\""
 							},
 							"response": []
+						},
+						{
+							"name": "http://192.168.166.26:8083/api/v1/valveactivity/Vessel('vesse%3Ba')/Details",
+							"id": "d8b543f7-5a9d-4f38-964a-f8a3736c1d5d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+									}
+								],
+								"url": {
+									"raw": "{{BaseURL}}/valveactivity/Vessel('{{vessel}}')/Details?tagName&operationId",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"valveactivity",
+										"Vessel('{{vessel}}')",
+										"Details"
+									],
+									"query": [
+										{
+											"key": "tagName",
+											"value": null,
+											"type": "text"
+										},
+										{
+											"key": "operationId",
+											"value": null,
+											"description": "integer",
+											"type": "text"
+										}
+									]
+								},
+								"description": "Generated from cURL: curl -X GET \"http://192.168.166.26:8083/api/v1/valveactivity/Vessel('vesse%3Ba')/Details\" -H  \"accept: application/json;odata.metadata=minimal;odata.streaming=true\""
+							},
+							"response": []
 						}
 					],
 					"id": "5ceb54b7-af02-48eb-950e-cba7ec0486d6"
@@ -14597,25 +14639,6 @@
 				}
 			],
 			"id": "f7623925-6b67-4601-80e2-6c3f1fe5f150"
-		},
-		{
-			"name": "http://192.168.166.26:8083/api/v1/valveactivity/Vessel('vesse%3Ba')/Details",
-			"id": "d8b543f7-5a9d-4f38-964a-f8a3736c1d5d",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "accept",
-						"value": "application/json;odata.metadata=minimal;odata.streaming=true"
-					}
-				],
-				"url": "http://192.168.166.26:8083/api/v1/valveactivity/Vessel('vesse%3Ba')/Details",
-				"description": "Generated from cURL: curl -X GET \"http://192.168.166.26:8083/api/v1/valveactivity/Vessel('vesse%3Ba')/Details\" -H  \"accept: application/json;odata.metadata=minimal;odata.streaming=true\""
-			},
-			"response": []
 		}
 	],
 	"auth": {
