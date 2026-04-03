@@ -2632,13 +2632,13 @@
 									}
 								],
 								"url": {
-									"raw": "{{BaseURL}}/valveactivity/Vessel('VesselA')/Operations",
+									"raw": "{{BaseURL}}/valveactivity/Vessel('{{vessel}}')/Operations",
 									"host": [
 										"{{BaseURL}}"
 									],
 									"path": [
 										"valveactivity",
-										"Vessel('VesselA')",
+										"Vessel('{{vessel}}')",
 										"Operations"
 									],
 									"query": [
@@ -2693,13 +2693,13 @@
 									}
 								],
 								"url": {
-									"raw": "{{BaseURL}}/valveactivity/Vessel('vessea')/Overview?tagName&showDetails&from&to&showFailed&showNotOperated&showOperatedOk",
+									"raw": "{{BaseURL}}/valveactivity/Vessel('{{vessel}}')/Overview?tagName&showDetails&from&to&showFailed&showNotOperated&showOperatedOk",
 									"host": [
 										"{{BaseURL}}"
 									],
 									"path": [
 										"valveactivity",
-										"Vessel('vessea')",
+										"Vessel('{{vessel}}')",
 										"Overview"
 									],
 									"query": [
@@ -14597,6 +14597,25 @@
 				}
 			],
 			"id": "f7623925-6b67-4601-80e2-6c3f1fe5f150"
+		},
+		{
+			"name": "http://192.168.166.26:8083/api/v1/valveactivity/Vessel('vesse%3Ba')/Details",
+			"id": "d8b543f7-5a9d-4f38-964a-f8a3736c1d5d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+					}
+				],
+				"url": "http://192.168.166.26:8083/api/v1/valveactivity/Vessel('vesse%3Ba')/Details",
+				"description": "Generated from cURL: curl -X GET \"http://192.168.166.26:8083/api/v1/valveactivity/Vessel('vesse%3Ba')/Details\" -H  \"accept: application/json;odata.metadata=minimal;odata.streaming=true\""
+			},
+			"response": []
 		}
 	],
 	"auth": {
